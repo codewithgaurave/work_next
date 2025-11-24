@@ -32,7 +32,7 @@ export default function SidebarText() {
       <Link
         to="/GetDemo"
         className="
-          fixed left-[-42px] top-[60%] -translate-y-1/2
+          fixed left-[-42px]  xl:top-[58%]  lg:top-[59%] top-[60%] -translate-y-1/2
           -rotate-90 origin-center
           px-6 py-3
           bg-red-600
