@@ -259,7 +259,7 @@ const WebsiteAndAppDevelopment = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Website & App
             </span>
@@ -269,7 +269,7 @@ const WebsiteAndAppDevelopment = () => {
           </h1>
 
           {/* Sub Text */}
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto  text-yellow-100 font-semibold leading-relaxed drop-shadow-sm">
             Transform your ideas into stunning digital experiences with our
             expert website design, development, and mobile app creation
             services.
@@ -452,7 +452,7 @@ const WebsiteAndAppDevelopment = () => {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-100 mt-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-green-100 mt-6">
               Featured{" "}
               <span className="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">
                 Projects

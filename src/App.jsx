@@ -1,10 +1,11 @@
 import "./App.css";
 import SidebarText from "./Component/Lebal";
-import LeftLabel from "./Component/Lebal";
+// import LeftLabel from "./Component/Lebal";
 
 import Navbar from "./Component/Navbar";
 
 import Router from "./Page/Router";
+import ScrollToTopButton from "./Page/ScrollToTop";
 import ScrollToTop from "./Page/ScrollToTop";
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <ScrollToTop />
       <Router />
       <Navbar />
+       
+        <ScrollToTopButton />
     </>
   );
 }

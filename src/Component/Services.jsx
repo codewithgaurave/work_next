@@ -16,7 +16,9 @@ function Services() {
     {
       id: 1,
       title: "Digital Marketing",
-      icon: <TrendingUp size={90} strokeWidth={1.5} className="text-green-300" />,
+      icon: (
+        <TrendingUp size={90} strokeWidth={1.5} className="text-green-300" />
+      ),
       services: [
         "SEO optimization for ranking growth",
         "Social media brand building",
@@ -41,7 +43,11 @@ function Services() {
       id: 3,
       title: "Website & App Development",
       icon: (
-        <MonitorSmartphone size={90} strokeWidth={1.5} className="text-green-300" />
+        <MonitorSmartphone
+          size={90}
+          strokeWidth={1.5}
+          className="text-green-300"
+        />
       ),
       services: [
         "Custom website development",
@@ -66,7 +72,9 @@ function Services() {
     {
       id: 5,
       title: "Business Consulting",
-      icon: <LineChart size={90} strokeWidth={1.5} className="text-green-300" />,
+      icon: (
+        <LineChart size={90} strokeWidth={1.5} className="text-green-300" />
+      ),
       services: [
         "Business setup & structure",
         "PRO & legal process support",
@@ -92,16 +100,17 @@ function Services() {
 
   return (
     <section className="py-20 bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white">
-      <div className="max-w-7xl mx-auto px-4">
-
+      <div className=" xl:max-w-6xl mx-auto px-4">
         {/* Heading */}
-        <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-4 
+        <h2
+          className="text-4xl md:text-6xl font-bold text-center mb-4 
           text-transparent bg-clip-text bg-gradient-to-r 
-          from-green-300 to-emerald-400 tracking-wide">
+          from-green-300 to-emerald-400 tracking-wide"
+        >
           Our Services
         </h2>
 
-        <p className="text-xl text-center text-green-200/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl text-center text-green-200/70 mb-12 max-w-2xl mx-auto leading-relaxed font-semibold">
           Smart, modern & result-driven services crafted to grow your business.
         </p>
 
@@ -128,35 +137,41 @@ function Services() {
         </div>
 
         {/* Main Content Box */}
-        <div className="rounded-3xl p-10 border border-green-400/20 
+        <div
+          className="rounded-3xl p-10 border border-green-400/20 
           bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F]
-          backdrop-blur-xl shadow-[0_0_40px_rgba(0,255,100,0.15)] transition-all">
-
+          backdrop-blur-xl shadow-[0_0_40px_rgba(0,255,100,0.15)] transition-all"
+        >
           <div className="grid lg:grid-cols-2 gap-10 items-start">
-
             {/* LEFT SIDE */}
             <div
               className={`transition-all duration-500 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 -translate-x-10"
               }`}
             >
               <div className="mb-6">{services[activeService].icon}</div>
 
-              <h3 className="text-4xl font-bold mb-4 text-transparent bg-clip-text 
-                bg-gradient-to-r from-green-700 to-emerald-400">
+              <h3
+                className="text-4xl font-bold mb-4 text-transparent bg-clip-text 
+                bg-gradient-to-r from-green-700 to-emerald-400"
+              >
                 {services[activeService].title}
               </h3>
 
               <p className="text-green-200/80 text-lg leading-relaxed">
-                Expert {services[activeService].title.toLowerCase()} designed for
-                growth-focused businesses.
+                Expert {services[activeService].title.toLowerCase()} designed
+                for growth-focused businesses.
               </p>
             </div>
 
             {/* RIGHT SIDE */}
             <div
               className={`transition-all duration-500 delay-150 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
               }`}
             >
               <div className="grid gap-4">
@@ -178,10 +193,8 @@ function Services() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

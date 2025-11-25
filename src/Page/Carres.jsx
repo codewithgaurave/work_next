@@ -399,7 +399,7 @@ const CareersPage = () => {
 
       {/* aplly daliye bax end  */}
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white overflow-hidden mt-[80px] py-24">
+      <section className="relative bg-[#01291F] text-white overflow-hidden text-white overflow-hidden mt-[80px] py-24">
         {/* Floating Bubbles */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Large bubbles */}
@@ -431,7 +431,7 @@ const CareersPage = () => {
           </div>
 
           {/* Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             Build Your Career With
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               WorknestConnect
@@ -494,7 +494,7 @@ const CareersPage = () => {
       {/* Departments Section */}
       <section id="departments" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-green-800">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-center mb-4 text-green-800">
             Our Departments
           </h2>
           <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
@@ -540,7 +540,7 @@ const CareersPage = () => {
         <div className="container mx-auto px-4">
           {/* Heading */}
           <h2
-            className="text-4xl md:text-5xl font-extrabold text-center mb-4 bg-gradient-to-r from-lime-300 to-emerald-400 text-transparent bg-clip-text drop-shadow-xl
+            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-4 bg-gradient-to-r from-lime-300 to-emerald-400 text-transparent bg-clip-text drop-shadow-xl
       opacity-0 animate-fadeUp"
           >
             Current Open Positions
@@ -664,7 +664,10 @@ const CareersPage = () => {
             <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-bold text-lg transition-colors shadow-lg">
               Browse All Openings
             </button>
-            <button onClick={()=>(Navigate("/contact"))} className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-green-600 transition-colors">
+            <button
+              onClick={() => Navigate("/contact")}
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-green-600 transition-colors"
+            >
               Contact Our HR Team
             </button>
           </div>

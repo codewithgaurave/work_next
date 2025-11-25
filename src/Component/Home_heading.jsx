@@ -143,30 +143,34 @@ function Home_heading() {
           src={items[active].img}
           alt="Service"
           className="
-          flex 
-            absolute 
-            bottom-0 
-            left-[50%] 
-            -translate-x-1/2
-            w-[560px] 
-            sm:w-[680px] 
-            md:w-[850px] 
-            lg:w-[1400px]
-            xl:w-[1700px]
-h-auto
-            md:pb-[170px]  
-            lg:pb-[220px]
-            xl:pb-[290px]
-            sm:pb-[130px]
-            translate-y-[50%]
-            lg:translate-y-[55%]
-            sm:translate-y-[55%]
-            xl:translate-y-[54%]
-            
-            transition-all duration-500
-            z-0
-            drop-shadow-[0px_0px_40px_rgba(31,209,152,0.35)]
-          "
+    flex 
+    absolute 
+    bottom-0 
+    left-1/2 
+    -translate-x-1/2
+    object-contain
+    filter
+    brightness-110
+    contrast-125
+    drop-shadow-[0px_0px_60px_rgba(31,209,152,0.55)]
+    
+    transition-all duration-500
+    w-[560px] 
+    sm:w-[680px] 
+    md:w-[850px] 
+    lg:w-[1400px]
+    xl:w-[1700px]
+    h-auto
+    md:pb-[170px]  
+    lg:pb-[220px]
+    xl:pb-[290px]
+    sm:pb-[130px]
+    translate-y-[50%]
+    lg:translate-y-[55%]
+    sm:translate-y-[55%]
+    xl:translate-y-[54%]
+    z-0
+  "
         />
       </div>
 

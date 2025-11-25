@@ -235,7 +235,7 @@ const GraphicDesign = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Graphic Design
             </span>
@@ -244,7 +244,7 @@ const GraphicDesign = () => {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
             Transform your brand with stunning visual designs that tell your
             story, connect with your audience, and drive real business results.
           </p>
@@ -325,7 +325,7 @@ const GraphicDesign = () => {
                 🎨 Creative Services
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-green-900 to-green-300 bg-clip-text text-transparent">
                 Design

@@ -249,11 +249,11 @@ const ITAndAISolutions = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               IT & AI Solutions
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mt-4">
+            <span className="blocktext-4xl md:text-5xl lg:text-6xl font-semibold text-transparent bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mt-4">
               That Transform Businesses
             </span>
           </h1>
@@ -346,7 +346,7 @@ const ITAndAISolutions = () => {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-5">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-5">
               Our{" "}
               <span className="bg-gradient-to-r from-green-800 to-green-400 bg-clip-text text-transparent">
                 Technology

@@ -13,7 +13,7 @@ function TransformBussnation() {
         </div>
 
         <div className="relative max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10 font-semibold">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl md:text-2xl text-[#ffff] mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">

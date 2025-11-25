@@ -49,7 +49,7 @@ export default function SidebarText() {
       {/* RIGHT SIDE SOCIAL MEDIA BAR */}
       <div
         className="
-          fixed right-0 top-1/2 -translate-y-1/2
+          fixed right-0  top-1/2 -translate-y-1/2
           flex flex-col gap-4 pr-2
           z-50
         "

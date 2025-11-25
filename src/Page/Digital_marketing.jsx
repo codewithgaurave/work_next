@@ -247,7 +247,7 @@ const DigitalMarketing = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Digital Marketing
             </span>
@@ -256,7 +256,7 @@ const DigitalMarketing = () => {
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
             We don't just create campaigns - we build digital empires.
             Experience the power of data-driven marketing that transforms your
             business growth.
@@ -342,7 +342,7 @@ const DigitalMarketing = () => {
                 ✨ Premium Services
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-700 mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-green-700 mb-6">
               Our Magic Formula
             </h2>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-oklch(44.8% 0.119 151.328) leading-relaxed drop-shadow-sm">

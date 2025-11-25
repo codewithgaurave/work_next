@@ -16,10 +16,7 @@ const Footer = () => {
   const services = [
     { name: "Digital Marketing", link: "/services/Digital_Marketing" },
     { name: "Graphic Designing", link: "/services/Graphic_designing_services" },
-    {
-      name: "Web & App Development",
-      link: "/services/Website_and_App_Development",
-    },
+    { name: "Web & App Development", link: "/services/Website_and_App_Development" },
     { name: "IT & AI Solutions", link: "/services/IT_&_AI_Solutions" },
     { name: "Business Consulting", link: "/services/Business_Consultings" },
   ];
@@ -34,65 +31,63 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white pt-16 pb-10 relative overflow-hidden">
-      {/* Soft Glowing Light Blobs */}
+      {/* Glow Animation */}
       <div className="absolute -top-32 -left-32 w-72 h-72 bg-[#A8FFE0] rounded-full opacity-10 animate-ping"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#A8FFE0] rounded-full opacity-10 animate-ping"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16">
-          {/* Logo + Text + Social */}
-          <div className="flex items-start gap-6">
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-2 overflow-auto object-cover">
-                <img src="/Footer.png" alt="" className="w-80 mb-4" />
-              </div>
+        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16 text-center lg:text-left">
 
-              <p className="text-gray-200 max-w-sm leading-relaxed">
-                Digital Marketing, Graphic Designing, Website & App Development,
-                IT & AI Solutions, Business Consulting — all under one roof.
-              </p>
+          {/* Logo + Text + Social Icons */}
+          <div className="flex flex-col items-center lg:items-start">
+            <img src="/Footer.png" alt="" className="w-64 mb-4" />
 
-              {/* Social Icons */}
-              <div className="flex space-x-4 mt-4">
-                {[
-                  {
-                    icon: <FaFacebook />,
-                    link: "https://www.facebook.com/share/1FYPKKECea/",
-                    bg: "bg-blue-500",
-                  },
-                  {
-                    icon: <FaInstagram />,
-                    link: "https://www.instagram.com/worknestconnect",
-                    bg: "bg-pink-500",
-                  },
-                  {
-                    icon: <FaTwitter />,
-                    link: "https://www.x.com/Worknestconnect",
-                    bg: "bg-sky-500",
-                  },
-                  {
-                    icon: <FaYoutube />,
-                    link: "https://www.youtube.com/@worknestconnect",
-                    bg: "bg-red-600",
-                  },
-                ].map((item, i) => (
-                  <a
-                    key={i}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${item.bg} p-3 rounded-full hover:scale-125 transform transition-all duration-300 shadow-lg`}
-                  >
-                    {item.icon}
-                  </a>
-                ))}
-              </div>
+            <p className="text-gray-200 max-w-xs leading-relaxed">
+              Digital Marketing, Graphic Designing, Website & App Development,
+              IT & AI Solutions, Business Consulting — all under one roof.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex space-x-4 mt-4 justify-center">
+              {[
+                {
+                  icon: <FaFacebook />,
+                  link: "https://www.facebook.com/share/1FYPKKECea/",
+                  bg: "bg-blue-500",
+                },
+                {
+                  icon: <FaInstagram />,
+                  link: "https://www.instagram.com/worknestconnect",
+                  bg: "bg-pink-500",
+                },
+                {
+                  icon: <FaTwitter />,
+                  link: "https://www.x.com/Worknestconnect",
+                  bg: "bg-sky-500",
+                },
+                {
+                  icon: <FaYoutube />,
+                  link: "https://www.youtube.com/@worknestconnect",
+                  bg: "bg-red-600",
+                },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${item.bg} p-3 rounded-full hover:scale-125 transform transition-all duration-300 shadow-lg`}
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Footer Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center text-center lg:text-left">
+
             {/* Services */}
             <div>
               <h4 className="text-xl font-bold text-green-300 mb-4">Services</h4>
@@ -112,9 +107,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-xl font-bold text-green-300 mb-4">
-                Quick Links
-              </h4>
+              <h4 className="text-xl font-bold text-green-300 mb-4">Quick Links</h4>
               <ul className="space-y-2 text-gray-200">
                 {navigation.map((nav, idx) => (
                   <li key={idx}>
@@ -131,13 +124,10 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-xl font-bold text-green-300 mb-4">
-                Contact Info
-              </h4>
+              <h4 className="text-xl font-bold text-green-300 mb-4">Contact Info</h4>
               <ul className="space-y-4 text-gray-200">
 
-                {/* Email */}
-                <li className="flex items-center">
+                <li className="flex justify-center lg:justify-start items-center">
                   <FaEnvelope className="mr-2 text-green-400" />
                   <a
                     href="mailto:info@worknestconnect.com"
@@ -147,8 +137,7 @@ const Footer = () => {
                   </a>
                 </li>
 
-                {/* Phone */}
-                <li className="flex items-center">
+                <li className="flex justify-center lg:justify-start items-center">
                   <FaPhone className="mr-2 text-green-400" />
                   <a
                     href="tel:+97431175515"
@@ -158,8 +147,7 @@ const Footer = () => {
                   </a>
                 </li>
 
-                {/* Address → Google Maps */}
-                <li className="flex items-center">
+                <li className="flex justify-center lg:justify-start items-center">
                   <FaMapMarkerAlt className="mr-2 text-green-400" />
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Al+Aziziya,+Doha+-+Qatar"
@@ -171,8 +159,7 @@ const Footer = () => {
                   </a>
                 </li>
 
-                {/* Website with globe icon */}
-                <li className="flex items-center">
+                <li className="flex justify-center lg:justify-start items-center">
                   <FaGlobe className="mr-2 text-green-400" />
                   <a
                     href="https://www.worknestconnect.com"
@@ -183,6 +170,7 @@ const Footer = () => {
                     www.worknestconnect.com
                   </a>
                 </li>
+
               </ul>
             </div>
           </div>

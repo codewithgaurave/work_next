@@ -280,7 +280,7 @@ const BusinessConsulting = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Business Consulting
             </span>
@@ -290,7 +290,7 @@ const BusinessConsulting = () => {
           </h1>
 
           {/* Sub Text */}
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
             Transform your business vision into reality with our comprehensive
             consulting services. From setup to expansion, we provide the
             expertise you need to succeed.
@@ -374,7 +374,7 @@ const BusinessConsulting = () => {
                 💼 Professional Services
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6">
               Our{" "}
               <span className="bg-gradient-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
                 Consulting
@@ -513,62 +513,60 @@ const BusinessConsulting = () => {
       <TransformBussnation />
 
       {/* Consulting Process Section */}
-<section className="py-20 bg-white text-slate-900">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">
-        Our{" "}
-        <span className="bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text text-transparent">
-          Consulting
-        </span>{" "}
-        Process
-      </h2>
+      <section className="py-20 bg-white text-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our{" "}
+              <span className="bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text text-transparent">
+                Consulting
+              </span>{" "}
+              Process
+            </h2>
 
-      <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        A structured approach to ensure your business achieves its goals
-        efficiently and effectively
-      </p>
-    </div>
+            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              A structured approach to ensure your business achieves its goals
+              efficiently and effectively
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {consultingProcess.map((step, index) => (
-        <div key={index} className="relative h-full flex flex-col">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {consultingProcess.map((step, index) => (
+              <div key={index} className="relative h-full flex flex-col">
+                {/* Horizontal Connector Line (Desktop Only) */}
+                {index < consultingProcess.length - 1 && (
+                  <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-emerald-300/40 z-0"></div>
+                )}
 
-          {/* Horizontal Connector Line (Desktop Only) */}
-          {index < consultingProcess.length - 1 && (
-            <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-emerald-300/40 z-0"></div>
-          )}
+                {/* Card */}
+                <div className="relative z-10 bg-white rounded-2xl p-6 text-center border border-slate-200 hover:border-emerald-400 transition-all duration-300 hover:-translate-y-2 group shadow-md hover:shadow-xl flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Icon Circle */}
+                    <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl text-white">{step.icon}</span>
+                    </div>
 
-          {/* Card */}
-          <div className="relative z-10 bg-white rounded-2xl p-6 text-center border border-slate-200 hover:border-emerald-400 transition-all duration-300 hover:-translate-y-2 group shadow-md hover:shadow-xl flex-1 flex flex-col justify-between">
-            <div>
-              {/* Icon Circle */}
-              <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl text-white">{step.icon}</span>
+                    {/* Step Number */}
+                    <div className="text-sm font-semibold text-emerald-700 mb-2">
+                      Step {step.step}
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">
+                      {step.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-
-              {/* Step Number */}
-              <div className="text-sm font-semibold text-emerald-700 mb-2">
-                Step {step.step}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-slate-800 mb-3">
-                {step.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {step.description}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <Footer />
     </div>
