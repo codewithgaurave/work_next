@@ -346,7 +346,7 @@ const CareersPage = () => {
           </div>
 
           {/* CV UPLOAD */}
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 md:col-span-2">
             <label className="text-gray-800 font-semibold text-sm">
               Upload CV
             </label>
@@ -360,18 +360,6 @@ const CareersPage = () => {
           </div>
 
           {/* QUALIFICATION DOC */}
-          <div className="flex flex-col gap-1">
-            <label className="text-gray-800 font-semibold text-sm">
-              Qualification Document
-            </label>
-            <input
-              name="qualificationDoc"
-              onChange={handleFile}
-              type="file"
-              className="p-3 rounded-xl border border-gray-300 bg-white w-full"
-              required
-            />
-          </div>
 
           {/* SUBMIT BUTTON */}
           <button
@@ -432,7 +420,7 @@ const CareersPage = () => {
 
           {/* Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
-            Build Your Career With
+            Build Your Career With <br />
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               WorknestConnect
             </span>
@@ -454,9 +442,12 @@ const CareersPage = () => {
               <span className="relative">Explore Open Positions</span>
             </button>
 
-            <button className="group relative inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-green-300 font-semibold px-8 py-4 rounded-2xl border-2 border-green-400 backdrop-blur-sm transition-all duration-300 overflow-hidden">
+            <a
+              href="#services"
+              className="group relative inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-green-300 font-semibold px-8 py-4 rounded-2xl border-2 border-green-400 backdrop-blur-sm transition-all duration-300 overflow-hidden"
+            >
               <span className="relative">Learn About Our Culture</span>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -492,7 +483,7 @@ const CareersPage = () => {
         </div>
       </section>
       {/* Departments Section */}
-      <section id="departments" className="py-16 bg-gray-50">
+      <section id="services" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-center mb-4 text-green-800">
             Our Departments
@@ -518,14 +509,6 @@ const CareersPage = () => {
                     </h3>
                   </div>
                   <p className="text-gray-600 mb-4">{dept.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">
-                      {dept.openings} Openings
-                    </span>
-                    <button className="text-blue-600 font-medium hover:text-blue-800 transition-colors">
-                      View Jobs →
-                    </button>
-                  </div>
                 </div>
               </div>
             ))}
@@ -533,123 +516,7 @@ const CareersPage = () => {
         </div>
       </section>
       {/* Open Positions Section */}
-      <section
-        id="openings"
-        className="py-20 bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white"
-      >
-        <div className="container mx-auto px-4">
-          {/* Heading */}
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center mb-4 bg-gradient-to-r from-lime-300 to-emerald-400 text-transparent bg-clip-text drop-shadow-xl
-      opacity-0 animate-fadeUp"
-          >
-            Current Open Positions
-          </h2>
 
-          <p className="text-center max-w-2xl mx-auto mb-12 text-emerald-200 text-lg opacity-0 animate-fadeUpDelay">
-            Browse through our open roles and join our growing, talented team.
-          </p>
-
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            <button
-              className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 
-        animate-fadeSmall ${
-          activeTab === "all"
-            ? "bg-emerald-400 text-green-900 shadow-lg shadow-emerald-500/30"
-            : "bg-white/10 backdrop-blur-lg text-emerald-200 hover:bg-white/20"
-        }`}
-              onClick={() => setActiveTab("all")}
-            >
-              All Positions
-            </button>
-
-            {departments.map((dept, i) => (
-              <button
-                key={dept.id}
-                className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300
-          animate-fadeSmall`}
-                style={{ animationDelay: `${0.1 * (i + 1)}s` }}
-                onClick={() => setActiveTab(dept.id)}
-              >
-                {dept.title}
-              </button>
-            ))}
-          </div>
-
-          {/* Job Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:max-w-9xl lg:max-w-8xl mx-auto">
-            {filteredJobs.map((job, index) => (
-              <div
-                key={job.id}
-                className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-xl hover:shadow-emerald-500/40 transition-all duration-300 p-6 hover:-translate-y-1 
-          opacity-0 animate-cardFade"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex flex-col justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-emerald-200 mb-3 animate-fadeSmall">
-                    {job.title}
-                  </h3>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {[job.type, job.location, job.experience, job.salary].map(
-                      (tag, i) => (
-                        <span
-                          key={i}
-                          className="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold text-white animate-tagPop"
-                          style={{ animationDelay: `${0.1 * i}s` }}
-                        >
-                          {tag}
-                        </span>
-                      )
-                    )}
-                  </div>
-
-                  <button
-                    onClick={() => setOpenForm(true)}
-                    className="self-start bg-gradient-to-r from-emerald-300 to-lime-300 text-green-900 px-6 py-2 rounded-xl font-semibold hover:shadow-emerald-400/40 hover:-translate-y-1 transition-all animate-fadeSmall"
-                  >
-                    Apply Now
-                  </button>
-                </div>
-
-                <p className="text-emerald-100/90 mb-6 leading-relaxed animate-fadeSmall">
-                  {job.description}
-                </p>
-
-                <div className="mb-5">
-                  <h4 className="font-bold text-emerald-300 mb-2 animate-fadeSmall">
-                    Key Requirements:
-                  </h4>
-                  <ul className="list-disc list-inside text-emerald-100 space-y-1 animate-fadeSmall">
-                    {job.requirements.map((req, index) => (
-                      <li key={index}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-emerald-300 mb-2 animate-fadeSmall">
-                    Required Skills:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {job.skills.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="bg-white/20 px-3 py-1 text-sm rounded-full text-emerald-200 animate-tagPop"
-                        style={{ animationDelay: `${index * 0.07}s` }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-b from-[#04271e] via-[#062f23] to-[#01291F] text-white">
         <div className="container mx-auto px-4 text-center">
@@ -661,8 +528,11 @@ const CareersPage = () => {
             solutions for businesses worldwide.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-bold text-lg transition-colors shadow-lg">
-              Browse All Openings
+            <button
+              onClick={() => setOpenForm(true)}
+              className="bg-green-500 text-white px-8 py-3 rounded-lg font-bold text-lg transition-colors shadow-lg"
+            >
+              Apply for This Job
             </button>
             <button
               onClick={() => Navigate("/contact")}

@@ -1,27 +1,19 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
+// Main pages
 import Home from "./Home";
-// import About from "./About";
-import Website from "./Website_and_App_Development_Service";
-// import Business_Consultings from "./Business_Consultings";
-// import IT_Solutions from "./IT_&_AI_Solutions";
-// import Graphic from "./Graphic_designing";
-// import Digital_marketing from "./Digital_marketing";
-import Contact from "./Contact";
-import Carres from "./Carres";
-import GetDemo from "./Getdemo";
 import AboutUs from "./About";
+import Contact from "./Contact";
+import CareersPage from "./Carres";
+import DemoPage from "./Getdemo";
+
+// Services pages
 import DigitalMarketing from "./Digital_marketing";
 import GraphicDesign from "./Graphic_designing";
-// import IT_and_Solustion from "./IT_&_AI_Solutions";
+import WebsiteAndAppDevelopment from "./Website_and_App_Development_Service";
 import ITAndAISolutions from "./IT_&_AI_Solutions";
 import BusinessConsulting from "./Business_Consultings";
-import WebsiteAndAppDevelopment from "./Website_and_App_Development_Service";
-import ContactHeader from "./Contact";
-import CareerHeader from "./Carres";
-import CareersPage from "./Carres";
-import DemoForm from "./Getdemo";
-import DemoPage from "./Getdemo";
 
 function Router() {
   return (
@@ -29,8 +21,10 @@ function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+
+        {/* Services */}
         <Route
-          path="//services/Digital_Marketing"
+          path="/services/Digital_Marketing"
           element={<DigitalMarketing />}
         />
         <Route
@@ -49,10 +43,11 @@ function Router() {
           path="/services/Business_Consultings"
           element={<BusinessConsulting />}
         />
-        <Route path="/contact" element={<ContactHeader />} />
 
-        <Route path="/hiring" element={<CareersPage />} />
-        <Route path="/GetDemo" element={<DemoPage />} />
+        {/* Other pages */}
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/getdemo" element={<DemoPage />} />
       </Routes>
     </>
   );

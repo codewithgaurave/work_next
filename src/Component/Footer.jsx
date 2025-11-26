@@ -16,7 +16,10 @@ const Footer = () => {
   const services = [
     { name: "Digital Marketing", link: "/services/Digital_Marketing" },
     { name: "Graphic Designing", link: "/services/Graphic_designing_services" },
-    { name: "Web & App Development", link: "/services/Website_and_App_Development" },
+    {
+      name: "Web & App Development",
+      link: "/services/Website_and_App_Development",
+    },
     { name: "IT & AI Solutions", link: "/services/IT_&_AI_Solutions" },
     { name: "Business Consulting", link: "/services/Business_Consultings" },
   ];
@@ -38,7 +41,6 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16 text-center lg:text-left">
-
           {/* Logo + Text + Social Icons */}
           <div className="flex flex-col items-center lg:items-start">
             <img src="/Footer.png" alt="" className="w-64 mb-4" />
@@ -51,6 +53,11 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex space-x-4 mt-4 justify-center">
               {[
+                {
+                  icon: <FaPhone />,
+                  link: "tel:+97431175515",
+                  bg: "bg-green-500",
+                },
                 {
                   icon: <FaFacebook />,
                   link: "https://www.facebook.com/share/1FYPKKECea/",
@@ -87,10 +94,11 @@ const Footer = () => {
 
           {/* Footer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-center text-center lg:text-left">
-
             {/* Services */}
             <div>
-              <h4 className="text-xl font-bold text-green-300 mb-4">Services</h4>
+              <h4 className="text-xl font-bold text-green-300 mb-4">
+                Services
+              </h4>
               <ul className="space-y-2 text-gray-200">
                 {services.map((service, idx) => (
                   <li key={idx}>
@@ -107,7 +115,9 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-xl font-bold text-green-300 mb-4">Quick Links</h4>
+              <h4 className="text-xl font-bold text-green-300 mb-4">
+                Quick Links
+              </h4>
               <ul className="space-y-2 text-gray-200">
                 {navigation.map((nav, idx) => (
                   <li key={idx}>
@@ -124,9 +134,10 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-xl font-bold text-green-300 mb-4">Contact Info</h4>
+              <h4 className="text-xl font-bold text-green-300 mb-4">
+                Contact Info
+              </h4>
               <ul className="space-y-4 text-gray-200">
-
                 <li className="flex justify-center lg:justify-start items-center">
                   <FaEnvelope className="mr-2 text-green-400" />
                   <a
@@ -170,7 +181,6 @@ const Footer = () => {
                     www.worknestconnect.com
                   </a>
                 </li>
-
               </ul>
             </div>
           </div>
@@ -178,7 +188,11 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="border-t border-green-900/40 pt-6 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} WorknestConnect. All rights reserved.
+          {new Date().getFullYear()} © Copyright To WorkNest Connect. Designed
+          and Developed by
+          <a href="https://www.digicoders.in" target="_blank">
+            #TeamDigiCoders
+          </a>
         </div>
       </div>
     </footer>

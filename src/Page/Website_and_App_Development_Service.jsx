@@ -17,6 +17,9 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import Footer from "../Component/Footer";
+import TransformBussnation from "../Component/TransformBussnation";
+// import { Link } from "lucide-react"
+import { Link } from "react-router-dom";
 
 const WebsiteAndAppDevelopment = () => {
   const projectCardsRef = useRef([]);
@@ -207,8 +210,7 @@ const WebsiteAndAppDevelopment = () => {
       comment:
         "The e-commerce platform they built increased our sales by 150% and provided an exceptional user experience.",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/W2.jpg",
       project: "E-Commerce Platform",
     },
     {
@@ -278,46 +280,23 @@ const WebsiteAndAppDevelopment = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary Button */}
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative">Start Your Project Today</span>
+              <span className="relative">Start Project Today</span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </Link>
 
             {/* Secondary Button */}
             <a
-              href="#projects"
+              href="#services"
               className="group inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl border-2 border-white/30 hover:border-green-400 backdrop-blur-lg transition-all duration-300 shadow-md hover:shadow-yellow-300/30"
             >
               <FaPlay className="mr-3 text-sm text-green-300" />
-              View Our Work
+              View Work
             </a>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-green-200">
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex -space-x-2 mr-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-400 rounded-full border-2 border-[#01291F] shadow-md"
-                  ></div>
-                ))}
-              </div>
-              150+ Projects Delivered
-            </div>
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex text-green-400 mr-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <FaStar key={i} className="fill-current drop-shadow-sm" />
-                ))}
-              </div>
-              4.9/5 Client Rating
-            </div>
           </div>
         </div>
 
@@ -385,13 +364,13 @@ const WebsiteAndAppDevelopment = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors"
               >
                 Learn More{" "}
                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
 
             {/* Mobile App Development Card */}
@@ -423,13 +402,13 @@ const WebsiteAndAppDevelopment = () => {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="inline-flex items-center text-purple-600 font-semibold group-hover:text-purple-700 transition-colors"
               >
                 Learn More{" "}
                 <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -437,7 +416,7 @@ const WebsiteAndAppDevelopment = () => {
 
       {/* Projects Showcase */}
       <section
-        id="projects"
+        id="services"
         className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-10 bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white"
       >
         {/* Background Glow */}
@@ -549,19 +528,19 @@ const WebsiteAndAppDevelopment = () => {
 
                   {/* Buttons */}
                   <div className="flex space-x-3 mt-6">
-                    <a
-                      href={project.liveLink}
+                    <Link
+                      to="/contact"
                       className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white text-center py-2 rounded-xl font-semibold text-sm sm:text-base transition-all transform hover:-translate-y-1"
                     >
                       Live Demo
-                    </a>
+                    </Link>
 
-                    <a
-                      href={"/contact"}
+                    <Link
+                      to="/contact"
                       className="flex-1 bg-white/10 hover:bg-white/20 text-green-200 text-center py-2 rounded-xl font-semibold text-sm sm:text-base border border-green-200/30 transition-all"
                     >
                       Code
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -571,31 +550,30 @@ const WebsiteAndAppDevelopment = () => {
       </section>
 
       {/* Technology Stack Section */}
-<section className="py-20 bg-white text-slate-800">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white text-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Our{" "}
+              <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
+                Technology
+              </span>{" "}
+              Stack
+            </h2>
 
-    {/* Header */}
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold mb-6">
-        Our{" "}
-        <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">
-          Technology
-        </span>{" "}
-        Stack
-      </h2>
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              We work with cutting-edge technologies to build fast, scalable,
+              and maintainable applications.
+            </p>
+          </div>
 
-      <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        We work with cutting-edge technologies to build fast, scalable,
-        and maintainable applications.
-      </p>
-    </div>
-
-    {/* Tech Grid */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-5 md:gap-6">
-      {technologies.map((tech, index) => (
-        <div
-          key={index}
-          className="
+          {/* Tech Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-5 md:gap-6">
+            {technologies.map((tech, index) => (
+              <div
+                key={index}
+                className="
             group 
             bg-white 
             rounded-2xl 
@@ -611,47 +589,29 @@ const WebsiteAndAppDevelopment = () => {
             hover:-translate-y-2 
             cursor-pointer
           "
-        >
-          {/* Icon */}
-          <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
-            {tech.icon}
+              >
+                {/* Icon */}
+                <div className="text-3xl sm:text-4xl mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {tech.icon}
+                </div>
+
+                {/* Name */}
+                <div className="text-sm sm:text-base font-semibold text-slate-700">
+                  {tech.name}
+                </div>
+
+                {/* Category */}
+                <div className="text-xs text-slate-500 mt-1">
+                  {tech.category}
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Name */}
-          <div className="text-sm sm:text-base font-semibold text-slate-700">
-            {tech.name}
-          </div>
-
-          {/* Category */}
-          <div className="text-xs text-slate-500 mt-1">
-            {tech.category}
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-900 via-green-900 to-green-900 text-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your Digital Solution?
-          </h2>
-          <p className="text-xl text-yellow-200 mb-8 max-w-2xl mx-auto">
-            Let's create amazing websites and mobile apps that will take your
-            business to the next level.
-          </p>
-          <a
-            href="/contact"
-            className="group/btn inline-flex items-center justify-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
-          >
-            Start Your Project
-            <FaRocket className="ml-3" />
-          </a>
         </div>
       </section>
+
+      <TransformBussnation />
+
       {/* Testimonials Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

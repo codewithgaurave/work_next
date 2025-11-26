@@ -7,6 +7,7 @@ import {
   FaArrowRight,
   FaPlay,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function ContactHeader() {
   const [formData, setFormData] = useState({
@@ -107,13 +108,13 @@ export default function ContactHeader() {
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
             </a>
 
-            <a
-              href="/services/Digital_Marketing"
+            <Link
+              to="/services/Digital_Marketing"
               className="group inline-flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl border-2 border-white/30 hover:border-green-400 backdrop-blur-lg transition-all duration-300"
             >
               <FaPlay className="mr-3 text-sm text-green-300" />
               View Services
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -133,7 +134,10 @@ export default function ContactHeader() {
         ></div>
       </header>
 
-      <section className="min-h-screen bg-white px-4 relative overflow-hidden " id="contact" >
+      <section
+        className="min-h-screen bg-white px-4 relative overflow-hidden "
+        id="contact"
+      >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-100 rounded-full blur-3xl opacity-60 animate-pulse"></div>
@@ -157,11 +161,11 @@ export default function ContactHeader() {
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
-                Start Your{" "}
+                Connect With{" "}
                 <span className="bg-gradient-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
-                  Career
+                  Our
                 </span>{" "}
-                Journey With Us
+                Team Today
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -240,257 +244,160 @@ export default function ContactHeader() {
           </div>
 
           {/* Form Section */}
-          <div className="relative">
-            {/* Floating Animation Container */}
-            <div className="absolute -top-10 -right-10 w-20 h-20 bg-green-200 rounded-full opacity-60 animate-float"></div>
+          <div className="relative w-full max-w-4xl mx-auto px-4">
+            {/* Floating Blobs */}
+            <div className="absolute -top-10 -right-10 w-24 h-24 bg-green-300 rounded-full opacity-50 animate-float blur-xl"></div>
             <div
-              className="absolute -bottom-8 -left-8 w-16 h-16 bg-blue-200 rounded-full opacity-60 animate-float"
+              className="absolute -bottom-10 -left-10 w-20 h-20 bg-blue-300 rounded-full opacity-50 animate-float blur-lg"
               style={{ animationDelay: "2s" }}
             ></div>
             <div
-              className="absolute top-1/2 -right-12 w-12 h-12 bg-cyan-300 rounded-full opacity-60 animate-float"
-              style={{ animationDelay: "4s" }}
+              className="absolute top-1/2 -right-12 w-16 h-16 bg-purple-300 rounded-full opacity-50 animate-float blur-md"
+              style={{ animationDelay: "3s" }}
             ></div>
 
-            {/* Form Container */}
-            <div className="bg-white rounded-3xl p-8  border border-gray-100 relative overflow-hidden group hover:shadow-3xl transition-all duration-500">
-              {/* Animated Border */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-green-500 via-green-500 to-purple-200 opacity-0 group-hover:opacity-10 blur-lg transition-opacity duration-500"></div>
+            {/* Form Card */}
+            <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200 shadow-xl rounded-3xl p-8 md:p-12 overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-green-200">
+              {/* Border Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-300 to-purple-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500"></div>
 
-              {/* Background Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 opacity-50"></div>
+              {/* Light Background Pattern */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 opacity-60"></div>
 
               <div className="relative z-10">
-                {/* Form Header */}
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-green-800 to-green-400 bg-clip-text text-transparent mb-3">
-                    Apply Now
+                {/* Heading */}
+                <div className="text-center mb-10">
+                  <h2 className="text-4xl font-extrabold bg-gradient-to-r from-green-700 to-green-400 bg-clip-text text-transparent">
+                    Submit Your Application
                   </h2>
-                  <p className="text-gray-600">
-                    Fill out the form below and we'll get back to you within 24
-                    hours
+                  <p className="text-gray-600 mt-2">
+                    We respond within 24 hours
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name & Email */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  {/* Name + Email */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-hover:text-green-600 transition-colors">
+                      <label className="text-gray-700 font-semibold mb-2 block group-hover:text-green-600 transition">
                         Full Name *
                       </label>
                       <input
                         type="text"
                         name="name"
+                        required
                         value={formData.name}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-300 hover:border-gray-300"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
                         placeholder="Enter your full name"
                       />
                     </div>
 
                     <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-green:text-blue-600 transition-colors">
+                      <label className="text-gray-700 font-semibold mb-2 block group-hover:text-green-600 transition">
                         Email Address *
                       </label>
                       <input
                         type="email"
                         name="email"
+                        required
                         value={formData.email}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 hover:border-gray-300"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
                         placeholder="Enter your email"
                       />
                     </div>
                   </div>
 
-                  {/* Mobile & Resume */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Mobile + Subject */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-green:text-purple-600 transition-colors">
+                      <label className="text-gray-700 font-semibold mb-2 block">
                         Mobile Number *
                       </label>
                       <input
                         type="tel"
                         name="mobile"
+                        required
                         value={formData.mobile}
                         onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:green-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 hover:border-gray-300"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
                         placeholder="Your phone number"
                       />
                     </div>
 
                     <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-green:text-cyan-600 transition-colors">
-                        Upload Resume *
+                      <label className="text-gray-700 font-semibold mb-2 block">
+                        Choose Services*
                       </label>
-                      <div className="relative">
-                        <input
-                          type="file"
-                          name="resume"
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-green-900 file:to-green-500 file:text-white hover:file:from-green-600 hover:file:to-blue-600 transition-all duration-300 outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 hover:border-gray-300"
-                          accept=".pdf,.doc,.docx"
-                        />
-                      </div>
+
+                      <select
+                        name="subject"
+                        required
+                        value={formData.subject}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
+                      >
+                        <option value="Digital Marketing">
+                          Digital Marketing
+                        </option>
+                        <option value="Graphic Designing">
+                          Graphic Designing
+                        </option>
+                        <option value="Web Development & App Development">
+                          Web & App Development
+                        </option>
+                        <option value="AI & IT Development">
+                          AI & IT Development
+                        </option>
+                        <option value="Business Consultancy">
+                          Business Consultancy
+                        </option>
+                      </select>
                     </div>
                   </div>
 
-                  {/* Qualification */}
+                  {/* Message */}
                   <div className="group">
-                    <label className="block text-gray-700 font-semibold mb-2 group-hover:text-yellow-600 transition-colors">
-                      Qualification *
-                    </label>
-                    <select
-                      name="qualification"
-                      value={formData.qualification}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300 hover:border-gray-300"
-                    >
-                      <option value="" className="bg-white">
-                        Select your qualification
-                      </option>
-                      <option value="10th" className="bg-white">
-                        10th Grade
-                      </option>
-                      <option value="12th" className="bg-white">
-                        12th Grade
-                      </option>
-                      <option value="Diploma" className="bg-white">
-                        Diploma
-                      </option>
-                      <option value="B.Tech" className="bg-white">
-                        B.Tech
-                      </option>
-                      <option value="BCA" className="bg-white">
-                        BCA
-                      </option>
-                      <option value="Other" className="bg-white">
-                        Other
-                      </option>
-                    </select>
-                  </div>
-
-                  {/* Address */}
-                  <div className="group">
-                    <label className="block text-gray-700 font-semibold mb-2 group-hover:green-600 transition-colors">
-                      Address *
+                    <label className="text-gray-700 font-semibold mb-2 block">
+                      Message *
                     </label>
                     <textarea
                       name="address"
+                      rows="4"
+                      required
                       value={formData.address}
                       onChange={handleChange}
-                      required
-                      rows="3"
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-green-400 focus:ring-2 focus:ring-pink-400/20 transition-all duration-300 resize-none hover:border-gray-300"
-                      placeholder="Enter your complete address"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300 resize-none"
+                      placeholder="Write your message here..."
                     />
-                  </div>
-
-                  {/* Location Details */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-hover:text-green-600 transition-colors">
-                        District *
-                      </label>
-                      <input
-                        type="text"
-                        name="district"
-                        value={formData.district}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-green-400 focus:ring-2 focus:ring-green-400/20 transition-all duration-300 hover:border-gray-300"
-                        placeholder="District"
-                      />
-                    </div>
-
-                    <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-hover:text-blue-600 transition-colors">
-                        State *
-                      </label>
-                      <input
-                        type="text"
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 hover:border-gray-300"
-                        placeholder="State"
-                      />
-                    </div>
-
-                    <div className="group">
-                      <label className="block text-gray-700 font-semibold mb-2 group-hover:text-purple-600 transition-colors">
-                        Country *
-                      </label>
-                      <input
-                        type="text"
-                        name="country"
-                        value={formData.country}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 hover:border-gray-300"
-                        placeholder="Country"
-                      />
-                    </div>
                   </div>
 
                   {/* Submit Button */}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-gradient-to-r from-green-900 to-green-500 text-white font-bold rounded-xl hover:from-green-500 hover:to-green-900 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/25 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 text-white font-semibold rounded-xl bg-gradient-to-r from-green-700 to-green-400 hover:from-green-500 hover:to-green-700 shadow-lg hover:shadow-green-300/50 transition-all duration-500 transform hover:scale-[1.03] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
                   >
-                    <span className="relative z-10 flex items-center justify-center">
-                      {isSubmitting ? (
-                        <>
-                          <svg
-                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <circle
-                              className="opacity-25"
-                              cx="12"
-                              cy="12"
-                              r="10"
-                              stroke="currentColor"
-                              strokeWidth="4"
-                            ></circle>
-                            <path
-                              className="opacity-75"
-                              fill="currentColor"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                            ></path>
-                          </svg>
-                          Processing...
-                        </>
-                      ) : (
-                        <>
-                          Submit Application
-                          <svg
-                            className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M13 7l5 5m0 0l-5 5m5-5H6"
-                            />
-                          </svg>
-                        </>
+                    <span className="relative z-20 flex items-center justify-center">
+                      {isSubmitting ? "Processing..." : "Submit Application"}
+
+                      {!isSubmitting && (
+                        <svg
+                          className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
                       )}
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>
                 </form>
               </div>

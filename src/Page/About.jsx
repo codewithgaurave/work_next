@@ -3,6 +3,7 @@ import Footer from "../Component/Footer";
 import Services from "../Component/Services";
 import AboutWorknest from "../Component/Our_About";
 import { Navigate, useNavigate } from "react-router-dom";
+import TransformBussnation from "../Component/TransformBussnation";
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,7 +48,7 @@ const AboutUs = () => {
     setIsVisible(true);
   }, []);
 
-  const Navigate= useNavigate()
+  const Navigate = useNavigate();
   // Memoized border color function
   const getBorderColor = useCallback((colorString) => {
     if (colorString.includes("purple")) return "#a855f7";
@@ -327,37 +328,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-20 px-4 bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div
-            className={`rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-yellow-400/30 backdrop-blur-lg bg-white/5 shadow-lg transition-all duration-1000 ${
-              isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"
-            }`}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 font-['Playfair_Display'] text-white drop-shadow-lg">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let's discuss how{" "}
-              <span className="text-green-500 font-semibold">
-                WorknestConnect
-              </span>{" "}
-              can help you achieve your digital goals.
-            </p>
-            <div  onClick={()=>(Navigate("/contact"))} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <button className="bg-gradient-to-tr from-green-400 to-green-300 text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl text-sm sm:text-base">
-                Get Free Consultation
-              </button>
-              <button onClick={()=>(Navigate("/contact"))} className="border border-green-400 text-white-400 hover:bg-green-400 hover:text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base">
-                View Our Portfolio
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
+<TransformBussnation/>
       <Footer />
     </div>
   );

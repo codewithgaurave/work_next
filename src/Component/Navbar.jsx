@@ -73,7 +73,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? "red" : "inherit",
+                  color: isActive ? "oklch(72.3% 0.219 149.579)" : "inherit",
                 })}
                 className="relative group px-4 py-3 transition-all duration-300 hover:text-[#012017da]"
                 to="/"
@@ -87,7 +87,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? "red" : "inherit",
+                  color: isActive ? "oklch(72.3% 0.219 149.579)" : "inherit",
                 })}
                 className="relative group px-4 py-3 transition-all duration-300 hover:text-[#012017da]"
                 to="/about"
@@ -151,7 +151,9 @@ export default function Navbar() {
                     <li key={service.path}>
                       <NavLink
                         style={({ isActive }) => ({
-                          color: isActive ? "red" : "inherit",
+                          color: isActive
+                            ? "oklch(72.3% 0.219 149.579)"
+                            : "inherit",
                         })}
                         to={service.path}
                         className="flex items-center px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#013026]/5 hover:to-[#027A55]/5 hover:text-[#012017da] transition-all duration-300 group/item"
@@ -173,7 +175,7 @@ export default function Navbar() {
             <li>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? "red" : "inherit",
+                  color: isActive ? "oklch(72.3% 0.219 149.579)" : "inherit",
                 })}
                 className="relative group px-3 py-3 transition-all duration-300 hover:text-[#012017da]"
                 to="/contact"
@@ -189,9 +191,9 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4 ml-8">
             <NavLink
               style={({ isActive }) => ({
-                color: isActive ? "red" : "white",
+                color: isActive ? "oklch(72.3% 0.219 149.579)" : "white",
               })}
-              to="/hiring"
+              to="/Careers"
               className="relative px-6 py-2.5 bg-gradient-to-r from-[#013026] to-[#027A55] text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 font-semibold text-sm group overflow-hidden"
             >
               <span className="relative z-10">Careers</span>
@@ -201,13 +203,25 @@ export default function Navbar() {
 
             <NavLink
               style={({ isActive }) => ({
-                color: isActive ? "red" : "inherit",
+                color: isActive ? "oklch(72.3% 0.219 149.579)" : "black",
               })}
               to="/GetDemo"
-              className="relative px-6 py-2.5 border-2 border-[#012017da] text-[#012017da] rounded-xl hover:text-white transition-all duration-500 font-semibold text-sm group overflow-hidden"
+              className="relative px-6 py-2.5 border-2 border-[#012017da] 
+             text-[#012017da] 
+             group hover:text-white 
+             transition-all duration-500 font-semibold text-sm 
+             rounded-xl overflow-hidden"
             >
-              <span className="relative z-10">Get Demo</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#013026] to-[#027A55] scale-0 group-hover:scale-100 transition-transform duration-500 origin-center rounded-lg"></span>
+              <span className="relative z-10 group-hover:text-white">
+                Get Demo
+              </span>
+
+              <span
+                className="absolute inset-0 bg-gradient-to-r from-[#013026] to-[#027A55] 
+                 scale-0 group-hover:scale-100 
+                 transition-transform duration-500 
+                 origin-center rounded-lg"
+              ></span>
             </NavLink>
           </div>
 
@@ -215,7 +229,7 @@ export default function Navbar() {
           <div className="flex lg:hidden items-center gap-3">
             <NavLink
               style={({ isActive }) => ({
-                color: isActive ? "red" : "white",
+                color: isActive ? "oklch(72.3% 0.219 149.579)" : "white",
               })}
               to="/contact"
               className="relative px-4 py-2 bg-gradient-to-r from-[#013026] to-[#027A55] text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm font-semibold group overflow-hidden"
@@ -287,9 +301,10 @@ export default function Navbar() {
                 { path: "/about", name: "About" },
                 { path: "/contact", name: "Contact" },
               ].map((item) => (
-                <NavLink                style={({ isActive }) => ({
-              color: isActive ? "red" : "inherit",
-            })}
+                <NavLink
+                  style={({ isActive }) => ({
+                    color: isActive ? "oklch(72.3% 0.219 149.579)" : "inherit",
+                  })}
                   key={item.path}
                   to={item.path}
                   onClick={() => setOpenDrawer(false)}
@@ -372,7 +387,7 @@ export default function Navbar() {
                 <span className="absolute inset-0 bg-gradient-to-r from-[#027A55] to-[#013026] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
               </Link>
               <Link
-                to="/hiring"
+                to="/Careers"
                 onClick={() => setOpenDrawer(false)}
                 className="w-full py-3.5 border-2 border-[#012017da] text-[#012017da] font-semibold rounded-xl text-center transition-all duration-500 hover:bg-gradient-to-r hover:from-[#013026] hover:to-[#027A55] hover:text-white hover:border-transparent hover:scale-105"
               >

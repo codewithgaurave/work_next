@@ -25,6 +25,7 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import Footer from "../Component/Footer";
 import TransformBussnation from "../Component/TransformBussnation";
+import { Link } from "react-router-dom";
 
 const ITAndAISolutions = () => {
   const serviceCardsRef = useRef([]);
@@ -113,8 +114,7 @@ const ITAndAISolutions = () => {
         "Employee Self-Service",
         "Integration with Accounting",
       ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "https://dcsgr.com/wp-content/uploads/2021/05/payroll-1.jpg",
       gradient: "from-green-500 to-emerald-500",
       results: [
         "✓ Error-free Processing",
@@ -137,7 +137,7 @@ const ITAndAISolutions = () => {
         "Integration Capabilities",
       ],
       image:
-        "https://images.unsplash.com/photo-1563013541-2dcc5e5d2c90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "https://www.accupos.com/wp-content/uploads/2019/09/high-quality-pos.jpg",
       gradient: "from-orange-500 to-red-500",
       results: [
         "✓ Faster Checkout",
@@ -268,8 +268,8 @@ const ITAndAISolutions = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary Button */}
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -277,7 +277,7 @@ const ITAndAISolutions = () => {
                 Start Your Digital Transformation
               </span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </Link>
 
             {/* Secondary Button */}
             <a
@@ -290,27 +290,6 @@ const ITAndAISolutions = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-green-200">
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex -space-x-2 mr-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 bg-gradient-to-r from-green-200 to-green-600 rounded-full border-2 border-[#01291F] shadow-md"
-                  ></div>
-                ))}
-              </div>
-              Trusted by 200+ Enterprises
-            </div>
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex text-green-400 mr-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <FaStar key={i} className="fill-current drop-shadow-sm" />
-                ))}
-              </div>
-              4.9/5 Client Rating
-            </div>
-          </div>
         </div>
 
         {/* Floating Elements */}
@@ -420,8 +399,8 @@ const ITAndAISolutions = () => {
 
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="group/btn inline-flex items-center justify-center 
                 bg-gradient-to-r from-green-900 to-green-600
                 hover:from-green-600 hover:to-green-900 text-white
@@ -429,17 +408,8 @@ const ITAndAISolutions = () => {
                 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
                     >
                       <FaChartLine className="mr-3 group-hover/btn:scale-110 transition-transform duration-300" />
-                      See Case Study
-                    </a>
-
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center justify-center bg-white hover:bg-green-50
-                text-slate-700 font-semibold px-6 py-4 rounded-xl transition-all duration-300
-                border border-green-400 shadow-sm hover:shadow-md"
-                    >
                       Get Custom Quote
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -206,12 +206,13 @@ const DemoPage = () => {
                   <FaCalendarCheck className="text-xl" />
                   <span>Request Free Demo</span>
                 </button>
-                <button
+                <a
+                  href="#data"
                   className="border-2 border-emerald-500 text-emerald-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-emerald-50/20 transition-all duration-300 "
                   id="#Service"
                 >
                   View Our Work
-                </button>
+                </a>
               </div>
 
               {/* STATS */}
@@ -296,7 +297,11 @@ const DemoPage = () => {
       `}</style>
 
       {/* Services Section */}
-      <section className="relative py-20 bg-white overflow-hidden" Service>
+      <section
+        id="data"
+        className="relative py-20 bg-white overflow-hidden"
+        Service
+      >
         {/* Floating bubbles */}
         {bubbles.map((bubble, idx) => (
           <motion.div
@@ -432,25 +437,36 @@ const DemoPage = () => {
                   </h4>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.instagram.com/worknestconnect"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-emerald-100 text-emerald-600 p-3 rounded-full hover:bg-emerald-200 transition duration-300 shadow-md"
                     >
                       <FaInstagram />
                     </a>
+
                     <a
-                      href="#"
+                      href="https://www.facebook.com/share/1FYPKKECea/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-emerald-100 text-emerald-600 p-3 rounded-full hover:bg-emerald-200 transition duration-300 shadow-md"
                     >
                       <FaFacebookF />
                     </a>
+
                     <a
-                      href="#"
+                      href="https://www.x.com/Worknestconnect"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-emerald-100 text-emerald-600 p-3 rounded-full hover:bg-emerald-200 transition duration-300 shadow-md"
                     >
                       <FaTwitter />
                     </a>
+
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@worknestconnect"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-emerald-100 text-emerald-600 p-3 rounded-full hover:bg-emerald-200 transition duration-300 shadow-md"
                     >
                       <FaYoutube />
@@ -541,21 +557,6 @@ const DemoPage = () => {
                   </div>
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-300"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-gray-700 font-medium mb-2">
                       Email
                     </label>
                     <input
@@ -567,6 +568,8 @@ const DemoPage = () => {
                       required
                     />
                   </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-medium mb-2">
                       Mobile Number
@@ -580,44 +583,21 @@ const DemoPage = () => {
                       required
                     />
                   </div>
+                  <div>
+                    <label className="block text-gray-700 font-medium mb-2">
+                      Message
+                    </label>
+                    <input
+                      type="text"
+                      name="Message"
+                      value={formData.Message}
+                      onChange={handleInputChange}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-300"
+                      required
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Highest Qualification
-                  </label>
-                  <input
-                    type="text"
-                    name="qualification"
-                    value={formData.qualification}
-                    onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-300"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Upload CV
-                  </label>
-                  <input
-                    type="file"
-                    name="cv"
-                    onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
-                    accept=".pdf,.doc,.docx"
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-medium mb-2">
-                    Upload Image
-                  </label>
-                  <input
-                    type="file"
-                    name="image"
-                    onChange={handleInputChange}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100"
-                    accept="image/*"
-                  />
-                </div>
+
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"

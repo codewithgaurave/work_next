@@ -1,5 +1,5 @@
 // components/BusinessConsulting.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   FaBuilding,
   FaUsers,
@@ -24,10 +24,10 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import Footer from "../Component/Footer";
 import TransformBussnation from "../Component/TransformBussnation";
+import { Link } from "react-router-dom";
 
 const BusinessConsulting = () => {
   const serviceCardsRef = useRef([]);
-  const [activeService, setActiveService] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -196,36 +196,6 @@ const BusinessConsulting = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Ahmed Hassan",
-      company: "StartUp Ventures Qatar",
-      comment:
-        "Their business setup guidance helped us launch in 30 days instead of 3 months! Professional and efficient service.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Fatima Al-Mansoori",
-      company: "Retail Expansion Group",
-      comment:
-        "The market entry strategy was spot-on. We successfully entered 3 new markets with minimal risks and maximum returns.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Khalid Mohammed",
-      company: "Tech Manufacturing Co.",
-      comment:
-        "HR policies developed by them transformed our employee satisfaction and reduced turnover by 40% in the first year.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
-
   const consultingProcess = [
     {
       step: "01",
@@ -299,14 +269,14 @@ const BusinessConsulting = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary Button */}
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative">Start Your Business Journey</span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            </Link>
 
             {/* Secondary Button */}
             <a
@@ -316,29 +286,6 @@ const BusinessConsulting = () => {
               <FaPlay className="mr-3 text-sm text-green-300" />
               View Success Stories
             </a>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-yellow-200">
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex -space-x-2 mr-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-400 rounded-full border-2 border-[#01291F] shadow-md"
-                  ></div>
-                ))}
-              </div>
-              Trusted by 150+ Businesses
-            </div>
-            <div className="flex items-center text-green-200 drop-shadow-sm">
-              <div className="flex text-green-400 mr-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <FaStar key={i} className="fill-current drop-shadow-sm" />
-                ))}
-              </div>
-              4.8/5 Client Rating
-            </div>
           </div>
         </div>
 
@@ -489,19 +436,13 @@ const BusinessConsulting = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
+                    <Link
+                      to="/contact"
                       className="group/btn inline-flex items-center justify-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
                     >
                       <FaChartBar className="mr-3 group-hover/btn:scale-110 transition-transform duration-300" />
-                      View Case Study
-                    </a>
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center justify-center bg-white hover:bg-blue-50 text-slate-700 font-semibold px-6 py-4 rounded-xl transition-all duration-300 border-2 border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-md"
-                    >
                       Get Consultation
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
