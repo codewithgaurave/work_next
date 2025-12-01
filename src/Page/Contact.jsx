@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "../Component/Footer";
+
 import {
   FaEnvelope,
   FaPhone,
@@ -8,63 +9,48 @@ import {
   FaPlay,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function ContactHeader() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     mobile: "",
-    resume: null,
-    qualification: "",
-    address: "",
-    district: "",
-    state: "",
-    country: "",
+    service: "",
+    message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const api_url = import.meta.env.VITE_API_URL;
+  // const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: files ? files[0] : value,
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    // setIsSubmitting(true);
+    console.log(formData);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // try {
+    await axios.post(`${api_url}/api/contact/contact`, formData);
 
-    console.log("Form submitted:", formData);
-    alert("Application submitted successfully!");
-    setIsSubmitting(false);
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      mobile: "",
-      resume: null,
-      qualification: "",
-      address: "",
-      district: "",
-      state: "",
-      country: "",
-    });
+    alert("messgae  save");
   };
   return (
-    <div class main>
-      <header className="relative bg-[#01291F] text-white overflow-hidden mt-[80px] ">
+    <div className="main">
+      <header className="relative bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white  overflow-hidden mt-8">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute -top-32 -left-32 w-72 h-72 bg-green-400 rounded-full opacity-20 animate-pulse"></div>
           <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-green-400 rounded-full opacity-20 animate-pulse"></div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-400/20 to-transparent"></div>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-300 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-300 to-transparent"></div>
         </div>
 
         {/* Main Container */}
@@ -84,15 +70,15 @@ export default function ContactHeader() {
 
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
-            <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Contact Us
             </span>
             <span className="block text-4xl md:text-5xl lg:text-6xl  text-green-400">
-              Let’s Build Something Amazing Together
+              Let’s Build Something <br /> Amazing Together
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-white leading-relaxed drop-shadow-sm">
             Have a project, question, or idea? Get in touch with us and our team
             will help you turn it into reality.
           </p>
@@ -101,9 +87,9 @@ export default function ContactHeader() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#contact"
-              className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center bg-linear-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative">Contact Our Team</span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
             </a>
@@ -150,19 +136,19 @@ export default function ContactHeader() {
           <div className="space-y-8">
             {/* Header */}
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-50 to-blue-50 rounded-full border border-green-200 shadow-sm">
+              <div className="inline-flex items-center px-4 py-2 bg-linear-to-r from-green-50 to-blue-50 rounded-full border border-green-200 shadow-sm">
                 <span className="relative flex h-2 w-2 mr-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 <span className="text-green-700 font-semibold text-sm">
-                  We're Hiring!
+                  We're Contact!
                 </span>
               </div>
 
               <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900">
                 Connect With{" "}
-                <span className="bg-gradient-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
                   Our
                 </span>{" "}
                 Team Today
@@ -178,7 +164,7 @@ export default function ContactHeader() {
             {/* Features List */}
             <div className="space-y-4">
               <div className="flex items-center space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-green-200 transition-all duration-300 group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-linear-to-br from-green-500 to-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white text-xl">🚀</span>
                 </div>
                 <div>
@@ -192,7 +178,7 @@ export default function ContactHeader() {
               </div>
 
               <div className="flex items-center space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-purple-200 transition-all duration-300 group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-linear-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white text-xl">💼</span>
                 </div>
                 <div>
@@ -206,7 +192,7 @@ export default function ContactHeader() {
               </div>
 
               <div className="flex items-center space-x-4 p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300 group hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-400 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-linear-to-br from-green-500 to-green-400 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white text-xl">🌍</span>
                 </div>
                 <div>
@@ -259,15 +245,15 @@ export default function ContactHeader() {
             {/* Form Card */}
             <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200 shadow-xl rounded-3xl p-8 md:p-12 overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:shadow-green-200">
               {/* Border Glow */}
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-300 to-purple-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-green-400 via-blue-300 to-purple-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500"></div>
 
               {/* Light Background Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 opacity-60"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-green-50 via-blue-50 to-purple-50 opacity-60"></div>
 
               <div className="relative z-10">
                 {/* Heading */}
                 <div className="text-center mb-10">
-                  <h2 className="text-4xl font-extrabold bg-gradient-to-r from-green-700 to-green-400 bg-clip-text text-transparent">
+                  <h2 className="text-4xl font-extrabold bg-linear-to-r from-green-700 to-green-400 bg-clip-text text-transparent">
                     Submit Your Application
                   </h2>
                   <p className="text-gray-600 mt-2">
@@ -278,126 +264,82 @@ export default function ContactHeader() {
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   {/* Name + Email */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group">
-                      <label className="text-gray-700 font-semibold mb-2 block group-hover:text-green-600 transition">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border rounded-xl"
+                      placeholder="Full Name"
+                    />
 
-                    <div className="group">
-                      <label className="text-gray-700 font-semibold mb-2 block group-hover:text-green-600 transition">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
-                        placeholder="Enter your email"
-                      />
-                    </div>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border rounded-xl"
+                      placeholder="Email Address"
+                    />
                   </div>
 
-                  {/* Mobile + Subject */}
+                  {/* Mobile + Service */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group">
-                      <label className="text-gray-700 font-semibold mb-2 block">
-                        Mobile Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="mobile"
-                        required
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
-                        placeholder="Your phone number"
-                      />
-                    </div>
+                    <input
+                      type="tel"
+                      name="mobile"
+                      required
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border rounded-xl"
+                      placeholder="Mobile Number"
+                    />
 
-                    <div className="group">
-                      <label className="text-gray-700 font-semibold mb-2 block">
-                        Choose Services*
-                      </label>
-
-                      <select
-                        name="subject"
-                        required
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300"
-                      >
-                        <option value="Digital Marketing">
-                          Digital Marketing
-                        </option>
-                        <option value="Graphic Designing">
-                          Graphic Designing
-                        </option>
-                        <option value="Web Development & App Development">
-                          Web & App Development
-                        </option>
-                        <option value="AI & IT Development">
-                          AI & IT Development
-                        </option>
-                        <option value="Business Consultancy">
-                          Business Consultancy
-                        </option>
-                      </select>
-                    </div>
+                    <select
+                      name="service"
+                      required
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border rounded-xl"
+                    >
+                      <option value="">Select Service</option>
+                      <option value="Digital Marketing">
+                        Digital Marketing
+                      </option>
+                      <option value="Graphic Designing">
+                        Graphic Designing
+                      </option>
+                      <option value="Web Development & App Development">
+                        Web & App Development
+                      </option>
+                      <option value="AI & IT Development">
+                        AI & IT Development
+                      </option>
+                      <option value="Business Consultancy">
+                        Business Consultancy
+                      </option>
+                    </select>
                   </div>
 
                   {/* Message */}
-                  <div className="group">
-                    <label className="text-gray-700 font-semibold mb-2 block">
-                      Message *
-                    </label>
-                    <textarea
-                      name="address"
-                      rows="4"
-                      required
-                      value={formData.address}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-green-400 focus:border-green-500 focus:ring-2 focus:ring-green-300/50 transition-all duration-300 resize-none"
-                      placeholder="Write your message here..."
-                    />
-                  </div>
+                  <textarea
+                    name="message"
+                    rows="4"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border rounded-xl"
+                    placeholder="Write your message..."
+                  />
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-4 text-white font-semibold rounded-xl bg-gradient-to-r from-green-700 to-green-400 hover:from-green-500 hover:to-green-700 shadow-lg hover:shadow-green-300/50 transition-all duration-500 transform hover:scale-[1.03] disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+                    className="w-full py-4 text-white font-semibold rounded-xl bg-green-500 hover:bg-green-600"
                   >
-                    <span className="relative z-20 flex items-center justify-center">
-                      {isSubmitting ? "Processing..." : "Submit Application"}
-
-                      {!isSubmitting && (
-                        <svg
-                          className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"
-                          />
-                        </svg>
-                      )}
-                    </span>
+                    Submit
                   </button>
                 </form>
               </div>
@@ -405,7 +347,154 @@ export default function ContactHeader() {
           </div>
         </div>
       </section>
-      {/* map start */}
+      {/* Simple Company Info & Social Media Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Shapes */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-green-50"></div>
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-200/40 rounded-full blur-3xl opacity-40"></div>
+
+        <div className="relative container mx-auto px-6">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Company Info */}
+            <h2 className="text-5xl font-extrabold bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent mb-4 drop-shadow-sm">
+              WorknestConnect
+            </h2>
+
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+              Your trusted digital partner for innovative solutions and business
+              growth.
+            </p>
+
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              {/* Email */}
+              <div className="p-8 rounded-2xl bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-emerald-200 hover:-translate-y-2">
+                <FaEnvelope className="text-4xl text-emerald-600 mx-auto mb-4" />
+                <h3 className="font-bold text-xl text-gray-800">Email</h3>
+                <p className="text-gray-600 mt-2">info@worknestconnect.com</p>
+              </div>
+
+              {/* Phone */}
+              <div className="p-8 rounded-2xl bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-emerald-200 hover:-translate-y-2">
+                <FaPhone className="text-4xl text-emerald-600 mx-auto mb-4" />
+                <h3 className="font-bold text-xl text-gray-800">Phone</h3>
+                <p className="text-gray-600 mt-2">+974 3117 5515</p>
+              </div>
+
+              {/* Location (Updated with Full Address) */}
+              <div className="p-8 rounded-2xl bg-white/70 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 border border-emerald-200 hover:-translate-y-2">
+                <FaMapMarkerAlt className="text-4xl text-emerald-600 mx-auto mb-4" />
+                <h3 className="font-bold text-xl text-gray-800">Location</h3>
+                <p className="text-gray-600 mt-3 leading-relaxed">
+                  1st Floor, Apartment 4<br />
+                  Building No. 33, Street 180
+                  <br />
+                  Zone 55, Al Rayyan – Doha, Qatar
+                </p>
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <h3 className="text-3xl font-bold text-gray-800 mb-6">Follow Us</h3>
+
+            <div className="flex justify-center flex-wrap gap-6">
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/worknestconnect"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  fill="currentColor"
+                  className="w-7 h-7 text-green-600"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-3.2-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-3.2 1.7-4.8 4.9-4.9 1.3-.1 1.7-.1 4.9-.1zm0 3.3a6.5 6.5 0 100 13 6.5 6.5 0 000-13zm6.4-1.6a1.4 1.4 0 11-2.8 0 1.4 1.4 0 012.8 0z" />
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  className="w-7 h-7 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12A10 10 0 1010.6 22v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0022 12" />
+                </svg>
+              </a>
+
+              {/* X / Twitter */}
+              <a
+                href="https://www.x.com"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  className="w-7 h-7 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18 2l-5 7 6 8h-3l-4-5-4 5H4l6-8-5-7h3l4 5 4-5h2z" />
+                </svg>
+              </a>
+
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  className="w-7 h-7 text-green-600"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M23 7a3 3 0 00-2-2C19 4.5 12 4.5 12 4.5s-7 0-9 .5a3 3 0 00-2 2C0 9 0 12 0 12s0 3 1 5a3 3 0 002 2c2 .5 9 .5 9 .5s7 0 9-.5a3 3 0 002-2c1-2 1-5 1-5s0-3-1-5zM9.5 15.5v-7l6 3.5-6 3.5z" />
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a
+                href="https://www.tiktok.com/@worknestconnect?lang=en"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  className="w-7 h-7 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12.8 2h3.1c.1 1.2.6 2.3 1.4 3.2.9.9 2 1.4 3.2 1.4v3.1c-1.8 0-3.5-.7-4.8-1.9v7.4c0 3-2.4 5.4-5.4 5.4S5 17.8 5 14.8 7.4 9.4 10.4 9.4c.4 0 .8 0 1.2.1v3.1c-.4-.1-.8-.2-1.2-.2-1.3 0-2.3 1-2.3 2.3s1 2.3 2.3 2.3 2.3-1 2.3-2.3V2z" />
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/worknestconnect"
+                target="_blank"
+                className="w-14 h-14 flex items-center justify-center bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-xl hover:scale-110 border border-emerald-200 transition-all duration-300"
+              >
+                <svg
+                  className="w-7 h-7 text-green-600"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M4.98 3.5A2.5 2.5 0 112.5 6a2.5 2.5 0 012.48-2.5zM2.5 8.7h5v12h-5v-12zm7.3 0h4.8v1.7h.1c.7-1.3 2.4-2.1 4-2.1 4.2 0 5 2.8 5 6.4v6h-5v-5.3c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V20.7h-5v-12z" />
+                </svg>
+              </a>
+            </div>
+
+            <p className="mt-14 text-gray-500 text-sm">
+              © 2025 WorknestConnect. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

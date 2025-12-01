@@ -3,19 +3,10 @@ import React, { useEffect, useRef } from "react";
 import {
   FaBuilding,
   FaUsers,
-  FaChartLine,
-  FaHandshake,
   FaFileContract,
   FaCogs,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
   FaArrowRight,
   FaChartBar,
-  FaBullseye,
-  FaRocket,
-  FaStar,
   FaPlay,
   FaRegCheckCircle,
   FaGlobeAmericas,
@@ -61,7 +52,8 @@ const BusinessConsulting = () => {
       icon: <FaBuilding className="text-3xl" />,
       title: "Business Setup Support",
       description:
-        "Launch your business with confidence through our comprehensive setup services. We guide you through company registration, legal compliance, and strategic planning to establish a strong foundation for sustainable growth and success.",
+        "Launch your business with confidence through our complete setup and advisory services. We guide you through company registration, legal compliance, documentation, and strategic planning to ensure a smooth and hassle-free start to your operations..",
+      p: "Start Strong. Grow Without Limits.",
       features: [
         "Company Registration",
         "Legal Structure Advisory",
@@ -70,8 +62,7 @@ const BusinessConsulting = () => {
         "Office Space Guidance",
         "Initial Business Planning",
       ],
-      image:
-        "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Business Setup Support illustration.png",
       gradient: "from-blue-500 to-cyan-500",
       results: [
         "✓ Faster Setup Process",
@@ -84,7 +75,9 @@ const BusinessConsulting = () => {
       icon: <FaFileContract className="text-3xl" />,
       title: "PRO Services",
       description:
-        "Streamline your government relations and documentation with our Professional PRO services. We handle all government formalities, visa processing, and regulatory compliance to ensure smooth business operations and employee management.",
+        "Simplify your government interactions with our end-to-end Professional PRO solutions. We manage all official procedures, documentation, and compliance requirements, ensuring seamless operations and efficient employee management. From visas to approvals, we handle every detail with precision.",
+      p: "We Handle the Formalities—You Focus on Growth.",
+
       features: [
         "Government Liaison Services",
         "Visa & Immigration Processing",
@@ -93,8 +86,7 @@ const BusinessConsulting = () => {
         "Labor Contract Processing",
         "Municipality Approvals",
       ],
-      image:
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/PRO services Illustration.png",
       gradient: "from-green-500 to-emerald-500",
       results: [
         "✓ Time Saving",
@@ -107,7 +99,8 @@ const BusinessConsulting = () => {
       icon: <FaGlobeAmericas className="text-3xl" />,
       title: "Market Entry Guidance",
       description:
-        "Navigate new markets successfully with our expert market entry strategies. We provide comprehensive market analysis, competitor research, and entry planning to help you expand your business with confidence and minimal risk.",
+        "Enter the region’s fast-growing business landscape with clarity and confidence. Our market entry solutions provide deep local insights, competitive intelligence, and strategic guidance to help you establish a strong and compliant presence from day one.",
+      p: "Enter new markets with clarity, strategy, and certainty.",
       features: [
         "Market Research & Analysis",
         "Competitor Intelligence",
@@ -116,8 +109,7 @@ const BusinessConsulting = () => {
         "Risk Assessment",
         "Implementation Planning",
       ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Market Entry Guidance Illustration.png",
       gradient: "from-purple-500 to-pink-500",
       results: [
         "✓ Reduced Entry Risks",
@@ -130,7 +122,8 @@ const BusinessConsulting = () => {
       icon: <FaUsers className="text-3xl" />,
       title: "HR Policy Basics",
       description:
-        "Build a strong organizational foundation with our HR policy development services. We create comprehensive employee handbooks, policies, and procedures that ensure legal compliance, employee satisfaction, and operational efficiency.",
+        "Build a compliant, efficient, and people-first organization with expertly crafted HR policies. We develop clear, comprehensive handbooks and procedures that align with local labor regulations while enhancing employee experience and operational consistency.",
+      p: "Clarity, compliance, and culture—crafted for your organization.",
       features: [
         "Employee Handbook Development",
         "Recruitment Policies",
@@ -139,8 +132,7 @@ const BusinessConsulting = () => {
         "Employee Relations Guidelines",
         "Compliance Documentation",
       ],
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/HR Policy Basics Illustration.png",
       gradient: "from-orange-500 to-red-500",
       results: [
         "✓ Legal Compliance",
@@ -153,7 +145,9 @@ const BusinessConsulting = () => {
       icon: <FaCogs className="text-3xl" />,
       title: "IT Setup & Advisory",
       description:
-        "Optimize your technology infrastructure with our IT setup and advisory services. We help you select and implement the right technology solutions, ensuring your business operates efficiently and stays competitive in the digital landscape.",
+        "Enhance your technology infrastructure with smart, reliable systems that support your business growth. We help you choose the right tools, set up secure systems, and upgrade your digital capabilities so your operations run smoothly and stay future-ready.",
+      p: "Smart technology foundations for tomorrow-ready businesses.",
+
       features: [
         "IT Infrastructure Planning",
         "Software Selection Advisory",
@@ -162,8 +156,7 @@ const BusinessConsulting = () => {
         "Cloud Solutions Guidance",
         "Technology Roadmap Development",
       ],
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/IT Setup and Advisory Illustration.png",
       gradient: "from-indigo-500 to-purple-500",
       results: [
         "✓ Optimized Technology",
@@ -176,7 +169,8 @@ const BusinessConsulting = () => {
       icon: <FaChartBar className="text-3xl" />,
       title: "Business Strategy & Growth",
       description:
-        "Accelerate your business growth with our strategic consulting services. We develop customized growth strategies, performance metrics, and implementation plans to help you achieve sustainable expansion and increased market share.",
+        "Drive your business forward with strategic guidance designed for long-term success. We create tailored growth plans, improve your operations, and help you make confident decisions that strengthen your market position and support sustainable expansion.",
+      p: "Shaping your vision into measurable success.",
       features: [
         "Strategic Planning",
         "Business Model Optimization",
@@ -185,8 +179,7 @@ const BusinessConsulting = () => {
         "Operational Efficiency Analysis",
         "Expansion Planning",
       ],
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/007/997/267/small/businessmen-point-to-successful-business-growth-plans-ladder-of-success-action-planning-and-long-term-business-goals-photo.jpg",
+      image: "/Business Strategy and Growth illustration.png",
       gradient: "from-teal-500 to-blue-500",
       results: [
         "✓ Sustainable Growth",
@@ -225,13 +218,14 @@ const BusinessConsulting = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30 mt-[70px]">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50/30 mt-[70px]">
       {/* Header Section */}
-      <header className="relative bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white overflow-hidden">
+      <header className="relative bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white  overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/20 to-transparent"></div>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-400 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-400 to-transparent"></div>
         </div>
 
         {/* Main Container */}
@@ -251,16 +245,16 @@ const BusinessConsulting = () => {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
-            <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Business Consulting
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mt-4">
+            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-linear-to-r from-green-500 to-green-300 bg-clip-text mt-4">
               That Drives Growth
             </span>
           </h1>
 
           {/* Sub Text */}
-          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-2xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-white leading-relaxed drop-shadow-sm">
             Transform your business vision into reality with our comprehensive
             consulting services. From setup to expansion, we provide the
             expertise you need to succeed.
@@ -271,9 +265,9 @@ const BusinessConsulting = () => {
             {/* Primary Button */}
             <Link
               to="/contact"
-              className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center bg-linear-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative">Start Your Business Journey</span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
@@ -323,7 +317,7 @@ const BusinessConsulting = () => {
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6">
               Our{" "}
-              <span className="bg-gradient-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-900 to-green-500 bg-clip-text text-transparent">
                 Consulting
               </span>{" "}
               Expertise
@@ -353,55 +347,29 @@ const BusinessConsulting = () => {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
-                    {/* Gradient Overlay */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                    ></div>
-
-                    {/* Floating Icon */}
-                    <div className="absolute top-6 left-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div
-                        className={`bg-gradient-to-r ${service.gradient} text-white p-5 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/20`}
-                      >
-                        {service.icon}
-                      </div>
-                    </div>
-
-                    {/* Results Badge */}
-                    <div className="absolute bottom-6 right-6 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-2xl border border-white/20">
-                      <div className="text-sm font-semibold text-blue-300">
-                        Key Benefits
-                      </div>
-                      <div className="text-xs opacity-90">
-                        {service.results[0]}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
                 {/* Content Section - Enhanced */}
-                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-blue-50/30">
+                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-linear-to-br from-white to-blue-50/30">
                   {/* Service Header */}
                   <div className="mb-6">
                     <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                    <div className="w-16 h-1 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full"></div>
                   </div>
 
                   {/* Description */}
                   <p className="text-slate-700 text-lg mb-8 leading-relaxed font-medium">
                     {service.description}
                   </p>
+                  <p className="text-xl py-4 text-black font-semibold ">
+                    {service.p}
+                  </p>
 
                   {/* Features List - Enhanced */}
                   <div className="mb-8">
-                    <h4 className="font-bold text-slate-900 mb-5 flex items-center text-lg">
-                      <div className="bg-blue-100 p-2 rounded-lg mr-3">
-                        <FaBullseye className="text-blue-600" />
-                      </div>
-                      Services Included:
-                    </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {service.features.map((feature, idx) => (
                         <div
@@ -418,7 +386,7 @@ const BusinessConsulting = () => {
                   </div>
 
                   {/* Results Preview */}
-                  <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-2xl p-4 mb-6 border border-blue-200/30">
+                  <div className="bg-linear-to-r from-blue-500/10 to-cyan-500/10 rounded-2xl p-4 mb-6 border border-blue-200/30">
                     <div className="text-sm font-semibold text-blue-800 mb-2">
                       Expected Outcomes:
                     </div>
@@ -438,7 +406,7 @@ const BusinessConsulting = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       to="/contact"
-                      className="group/btn inline-flex items-center justify-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
+                      className="group/btn inline-flex items-center justify-center bg-linear-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
                     >
                       <FaChartBar className="mr-3 group-hover/btn:scale-110 transition-transform duration-300" />
                       Get Consultation
@@ -459,7 +427,7 @@ const BusinessConsulting = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our{" "}
-              <span className="bg-gradient-to-r from-green-600 to-emerald-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-600 to-emerald-400 bg-clip-text text-transparent">
                 Consulting
               </span>{" "}
               Process
@@ -483,7 +451,7 @@ const BusinessConsulting = () => {
                 <div className="relative z-10 bg-white rounded-2xl p-6 text-center border border-slate-200 hover:border-emerald-400 transition-all duration-300 hover:-translate-y-2 group shadow-md hover:shadow-xl flex-1 flex flex-col justify-between">
                   <div>
                     {/* Icon Circle */}
-                    <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-linear-to-r from-green-600 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl text-white">{step.icon}</span>
                     </div>
 

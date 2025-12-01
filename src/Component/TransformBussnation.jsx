@@ -1,14 +1,16 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { FaRocket, FaTimes } from "react-icons/fa";
 
 function TransformBussnation() {
+  const api_url = import.meta.env.VITE_API_URL;
   const [model, setModel] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
-    fullName: "",
     email: "",
     mobile: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
@@ -21,71 +23,61 @@ function TransformBussnation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     alert(`Thank you ${formData.name}! Your demo request has been submitted.`);
-
+    axios.post(`${api_url}/api/demo`, formData);
     setModel(false);
 
     setFormData({
       name: "",
-      fullName: "",
+      message: "",
       email: "",
       mobile: "",
-      qualification: "",
-      cv: null,
-      image: null,
     });
   };
 
   return (
     <div>
       {/* Main Section */}
-      <section className="py-20 bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white relative overflow-hidden">
-        {/* Floating Bubbles */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-36 h-36 bg-green-400 rounded-full opacity-20 animate-float-medium shadow-xl"></div>
-          <div
-            className="absolute top-32 right-20 w-48 h-48 bg-green-400 rounded-full opacity-20 animate-float-slow shadow-xl"
-            style={{ animationDelay: "0.5s" }}
-          ></div>
-          <div
-            className="absolute bottom-32 left-1/3 w-40 h-40 bg-green-400 rounded-full opacity-20 animate-float-fast shadow-xl"
-            style={{ animationDelay: "1s" }}
-          ></div>
+      <section className="py-24 bg-gradient-to-b  bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white  relative overflow-hidden">
+        {/* Floating Neon Bubbles */}
+        <div className="absolute inset-0 overflow-hidden opacity-40">
+          <div className="absolute top-10 left-10 w-44 h-44 bg-emerald-400/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-12 w-64 h-64 bg-green-500/20 rounded-full blur-2xl animate-float-slow"></div>
+          <div className="absolute top-1/2 left-1/3 w-52 h-52 bg-teal-400/25 rounded-full blur-2xl animate-float-fast"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10 font-semibold">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
+        <div className="relative max-w-7xl mx-auto text-center px-6 z-10 font-semibold">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight bg-gradient-to-r from-emerald-300 via-white to-emerald-400 bg-clip-text text-transparent drop-shadow-lg">
             Ready to Transform Your Business?
           </h2>
 
-          <p className="text-xl md:text-2xl text-[#fff] mb-8 max-w-2xl mx-auto">
-            Let's create something extraordinary together. Your success story
-            starts here.
+          <p className="text-xl md:text-2xl text-gray-200 mt-6 max-w-2xl mx-auto">
+            Let's build something extraordinary together and turn your vision
+            into a powerful reality.
           </p>
 
           {/* Button */}
           <button
             onClick={() => setModel(true)}
-            className="inline-flex items-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
+            className="mt-10 inline-flex items-center bg-gradient-to-r from-emerald-600 to-emerald-400 hover:from-emerald-500 hover:to-emerald-300 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_25px_rgba(16,185,129,0.4)] hover:shadow-[0_15px_40px_rgba(16,185,129,0.6)]"
           >
             Start Your Journey Now
-            <FaRocket className="ml-3 text-[#3a2407] animate-bounce" />
+            <FaRocket className="ml-3 text-yellow-300 animate-bounce" />
           </button>
         </div>
       </section>
 
       {/* Modal */}
       {model && (
-        <div className="fixed inset-0 bg-black/60 flex items-start justify-center p- z-50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] sm:mt-[200px] mt-[100px] overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center p-6 z-50 animate-fade-in">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl w-full max-w-xl p-0 animate-scale-in">
             {/* Header */}
-            <div className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white p-6 rounded-t-2xl flex justify-between items-center">
+            <div className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white p-6 rounded-t-3xl flex justify-between items-center shadow-lg">
               <h2 className="text-2xl font-bold">Request a Demo</h2>
 
               <button
                 onClick={() => setModel(false)}
-                className="text-white hover:text-emerald-200 transition p-1 rounded-full hover:bg-white/10"
+                className="text-white hover:text-emerald-200 transition p-1 rounded-full hover:bg-white/20"
               >
                 <FaTimes className="text-xl" />
               </button>
@@ -97,7 +89,7 @@ function TransformBussnation() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block text-gray-100 font-medium mb-2">
                       Name
                     </label>
                     <input
@@ -106,12 +98,13 @@ function TransformBussnation() {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500"
+                      className="w-full border border-white/30 bg-white/10 text-white rounded-xl px-4 py-3 backdrop-blur-md focus:ring-2 focus:ring-emerald-400"
                     />
                   </div>
 
+                  {/* Email */}
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block text-gray-100 font-medium mb-2">
                       Email
                     </label>
                     <input
@@ -120,15 +113,15 @@ function TransformBussnation() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500"
+                      className="w-full border border-white/30 bg-white/10 text-white rounded-xl px-4 py-3 backdrop-blur-md focus:ring-2 focus:ring-emerald-400"
                     />
                   </div>
                 </div>
 
-                {/* Email & Mobile */}
+                {/* Mobile + Message */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block text-gray-100 font-medium mb-2">
                       Mobile Number
                     </label>
                     <input
@@ -137,21 +130,21 @@ function TransformBussnation() {
                       value={formData.mobile}
                       onChange={handleInputChange}
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500"
+                      className="w-full border border-white/30 bg-white/10 text-white rounded-xl px-4 py-3 backdrop-blur-md focus:ring-2 focus:ring-emerald-400"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2">
+                    <label className="block text-gray-100 font-medium mb-2">
                       Message
                     </label>
                     <input
                       type="text"
-                      name="Adress"
-                      value={formData.Message}
+                      name="message"
+                      value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500"
+                      className="w-full border border-white/30 bg-white/10 text-white rounded-xl px-4 py-3 backdrop-blur-md focus:ring-2 focus:ring-emerald-400"
                     />
                   </div>
                 </div>
@@ -159,7 +152,7 @@ function TransformBussnation() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-2xl font-bold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-[0_10px_25px_rgba(16,185,129,0.4)] hover:shadow-[0_15px_40px_rgba(16,185,129,0.6)]"
                 >
                   Submit Request
                 </button>

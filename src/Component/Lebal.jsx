@@ -6,16 +6,40 @@ import {
   FaWhatsapp,
   FaTwitter,
 } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 
 export default function SidebarText() {
   return (
     <>
+      {/* LEFT BUTTON 2 */}
+      <Link
+        to="/GetDemo"
+        className="
+          hidden sm:block
+          fixed
+          left-[-42px]
+          top-1/2      
+
+          -translate-y-1/2
+          -rotate-90 origin-center
+          px-6 py-3
+          bg-green-600
+          text-white font-bold tracking-wide
+          shadow-lg shadow-emerald-800/40
+          border border-white/20 rounded-lg
+          hover:scale-110 hover:shadow-2xl hover:shadow-emerald-600/50
+          transition-all duration-300 cursor-pointer z-50
+        "
+      >
+        Get Demo
+      </Link>
 
       {/* RIGHT SIDE SOCIAL MEDIA */}
       <div
         className="
+          hidden sm:flex
           fixed right-0 top-1/2 -translate-y-1/2
-          flex flex-col gap-4 pr-2
+          flex-col gap-4 pr-2
           z-50
         "
       >
@@ -65,6 +89,18 @@ export default function SidebarText() {
           "
         >
           <FaTwitter />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@worknestconnect?lang=en"
+          target="_blank"
+          className="
+            bg-black
+            p-3 rounded-full text-white text-xl
+            shadow-lg hover:scale-110 transition-all
+          "
+        >
+          <FaTiktok />
         </a>
       </div>
     </>

@@ -1,14 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo2.svg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WorknestConnect</title>
+
+    <!-- GOOGLE TRANSLATE INIT -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi,ar",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <!-- GOOGLE TRANSLATE SCRIPT -->
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+
+    <!-- CUSTOM STYLING -->
+    <style>
+      #google_translate_element {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        z-index: 999999;
+        background: #764ba2;
+        padding: 10px;
+        border-radius: 12px;
+      }
+
+      .goog-te-combo {
+        background: white !important;
+        padding: 8px !important;
+        border-radius: 8px !important;
+      }
+
+      .goog-logo-link,
+      .goog-te-gadget span,
+      .goog-te-banner-frame {
+        display: none !important;
+      }
+
+      body {
+        top: 0 !important;
+      }
+    </style>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- GOOGLE TRANSLATE WIDGET (HIDDEN BUT USED BY REACT) -->
+    <div id="google_translate_element"></div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

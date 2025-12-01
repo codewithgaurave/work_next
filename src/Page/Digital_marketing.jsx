@@ -1,5 +1,5 @@
 // components/DigitalMarketing.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef,  } from "react";
 import {
   FaSearch,
   FaHashtag,
@@ -26,7 +26,7 @@ import { Link } from "react-router-dom";
 
 const DigitalMarketing = () => {
   const serviceCardsRef = useRef([]);
-  const [activeService, setActiveService] = useState(0);
+
 
   useEffect(() => {
     const observerOptions = {
@@ -60,7 +60,8 @@ const DigitalMarketing = () => {
       icon: <FaSearch className="text-3xl" />,
       title: "Search Engine Optimization",
       description:
-        "Dominate search rankings with our data-driven SEO strategies. We don't just optimize - we transform your online visibility through comprehensive technical audits, content excellence, and authoritative link building that drives sustainable organic growth.",
+        "Get found easily on search engines with effective SEO. From technical checks and better content to strong backlinks, we help your business rank higher and bring in consistent organic traffic",
+      p: "Visibility that brings real customers.",
       features: [
         "Advanced Keyword Research",
         "Technical SEO Audit",
@@ -70,7 +71,7 @@ const DigitalMarketing = () => {
         "Performance Analytics",
       ],
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "/SEO Illustration.png",
       gradient: "from-purple-500 to-blue-500",
       results: [
         "↑ 150% Organic Traffic",
@@ -83,7 +84,8 @@ const DigitalMarketing = () => {
       icon: <FaHashtag className="text-3xl" />,
       title: "Social Media Marketing",
       description:
-        "Create unforgettable brand experiences across social platforms. Our creative team crafts viral-worthy content while our strategists build communities that convert. From TikTok trends to LinkedIn thought leadership - we make your brand the talk of the town.",
+        "Create unforgettable brand experiences across every social platform. Our creative team crafts viral-worthy content, while our strategists build strong communities that convert. From TikTok trends to LinkedIn thought leadership, we make your brand the talk of the town.",
+      p: "Connecting your brand with the right audience.",
       features: [
         "Viral Content Creation",
         "Community Management",
@@ -92,7 +94,7 @@ const DigitalMarketing = () => {
         "Social Analytics",
         "Brand Storytelling",
       ],
-      image: "/Social.png",
+      image: "/Social Media Marketing Illustration.png",
       gradient: "from-pink-500 to-rose-500",
       results: [
         "↑ 500% Engagement",
@@ -105,7 +107,8 @@ const DigitalMarketing = () => {
       icon: <FaPenFancy className="text-3xl" />,
       title: "Content Marketing",
       description:
-        "Tell your brand story in ways that captivate and convert. We don't just create content - we craft narratives that build trust, establish authority, and guide your audience through a journey that ends with them becoming loyal customers.",
+        "Tell your brand’s story in a way that attracts, engages, and converts. We create content that builds trust, strengthens your authority, and guides your audience from interest to loyalty through clear, meaningful communication.",
+      p: "Stories that connect, engage, and convert.",
       features: [
         "Strategic Storytelling",
         "Blog & Article Writing",
@@ -115,7 +118,7 @@ const DigitalMarketing = () => {
         "Content Performance",
       ],
       image:
-        "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80",
+        "/Content Marketing Illustration.png",
       gradient: "from-green-500 to-teal-500",
       results: [
         "↑ 400% Content Engagement",
@@ -128,7 +131,8 @@ const DigitalMarketing = () => {
       icon: <FaGoogle className="text-3xl" />,
       title: "Google Ads Mastery",
       description:
-        "Capture ready-to-buy customers at the perfect moment. Our PPC wizards create hyper-targeted campaigns that maximize every dollar of your ad spend. From search to display, shopping to YouTube - we dominate the Google ecosystem.",
+        "Google Ads Mastery helps you reach the right customers at the right time with highly targeted, performance-driven campaigns. From search and display to shopping and YouTube, we maximize your ad spend and deliver measurable results that grow your business.",
+      p: "Right audience. Right moment. Real results.",
       features: [
         "PPC Campaign Management",
         "Display Network Ads",
@@ -138,7 +142,7 @@ const DigitalMarketing = () => {
         "ROI Optimization",
       ],
       image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+        "/Google Ads Mastery Illustration.png",
       gradient: "from-blue-500 to-cyan-500",
       results: [
         "↓ 40% Cost Per Click",
@@ -151,7 +155,8 @@ const DigitalMarketing = () => {
       icon: <FaFacebook className="text-3xl" />,
       title: "Meta Advertising",
       description:
-        "Turn social scrolling into profitable conversions. We leverage Meta's powerful targeting to put your brand in front of ideal customers. Our creative ads stop thumbs and our strategic funnels turn viewers into buyers.",
+        "Reach the right audience across Facebook and Instagram with smart, targeted Meta Ads. We create engaging creatives, optimize your campaigns, and use data-driven strategies to increase conversions, boost reach, and grow your business effectively.",
+       p:"Engage smarter. Convert faster.",
       features: [
         "Facebook Ads Strategy",
         "Instagram Campaigns",
@@ -160,7 +165,7 @@ const DigitalMarketing = () => {
         "Conversion Optimization",
         "Performance Analysis",
       ],
-      image: "/Meta2.jpg",
+      image: "/Meta Advertising Illustration.png",
       gradient: "from-indigo-500 to-purple-500",
       results: [
         "↑ 450% Ad Engagement",
@@ -173,7 +178,8 @@ const DigitalMarketing = () => {
       icon: <FaVideo className="text-3xl" />,
       title: "Video Marketing",
       description:
-        "Stop the scroll with video content that demands attention. From cinematic brand stories to thumb-stopping short-form content, we create video experiences that build emotional connections and drive massive engagement across all platforms.",
+        "Grab attention and engage your audience with compelling video content. From cinematic brand stories to short-form, shareable videos, we create experiences that build emotional connections, boost engagement, and drive results across all platforms.",
+      p: "Videos that capture, engage, and convert",
       features: [
         "Video Production",
         "YouTube SEO",
@@ -183,7 +189,7 @@ const DigitalMarketing = () => {
         "Video Analytics",
       ],
       image:
-        "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80",
+        "/Video Marketing Illustration.png",
       gradient: "from-red-500 to-orange-500",
       results: [
         "↑ 600% Video Views",
@@ -193,44 +199,16 @@ const DigitalMarketing = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechGrowth Inc.",
-      comment:
-        "Their SEO strategy tripled our organic traffic in just 6 months! The team is incredibly professional and results-driven.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Mike Rodriguez",
-      company: "Urban Fashion Co.",
-      comment:
-        "The social media campaigns created unprecedented engagement. Our sales increased by 200% in the first quarter!",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Emily Chen",
-      company: "Wellness Studio",
-      comment:
-        "Outstanding content strategy that positioned us as industry leaders. The ROI has been phenomenal!",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30 mt-[80px]">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50/30 mt-20">
       {/* Header Section */}
-      <header className="relative bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white overflow-hidden">
+      <header className="relative  bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/20 to-transparent"></div>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-yellow-300 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
@@ -252,12 +230,12 @@ const DigitalMarketing = () => {
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Digital Marketing
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent bg-clip-text mt-4">
+            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-linear-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent bg-clip-text mt-4">
               That Drives Results
             </span>
           </h1>
 
-          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-white leading-relaxed drop-shadow-sm">
             We don't just create campaigns - we build digital empires.
             Experience the power of data-driven marketing that transforms your
             business growth.
@@ -267,9 +245,9 @@ const DigitalMarketing = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/contact"
-              className="group relative inline-flex items-center bg-gradient-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center bg-linear-to-r from-green-400 to-green-400 hover:from-green-500 hover:to-green-500 text-[#3a2407] font-semibold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-yellow-400/40 transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative">Start Your Success Story</span>
               <FaArrowRight className="ml-3 relative group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
@@ -351,45 +329,33 @@ const DigitalMarketing = () => {
                     />
                     {/* Gradient Overlay */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.grant} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                      className={`absolute inset-0 bg-linear-to-r ${service.grant} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                     ></div>
 
-                    {/* Floating Icon */}
-                    <div className="absolute top-6 left-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div
-                        className={`bg-gradient-to-r ${service.gradient} text-white p-5 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/20`}
-                      >
-                        {service.icon}
-                      </div>
-                    </div>
+
 
                     {/* Results Badge */}
-                    <div className="absolute bottom-6 right-6 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-2xl border border-white/20">
-                      <div className="text-sm font-semibold text-cyan-300">
-                        Proven Results
-                      </div>
-                      <div className="text-xs opacity-90">
-                        {service.results[0]}
-                      </div>
-                    </div>
+   
                   </div>
                 </div>
 
                 {/* Content Section - Enhanced */}
-                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-blue-50/30">
+                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-linear-to-br from-white to-blue-50/30">
                   {/* Service Header */}
                   <div className="mb-6">
                     <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                    <div className="w-16 h-1 bg-linear-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-700 text-lg mb-8 leading-relaxed font-medium">
+                  <p className="text-slate-700 text-lg mb-4  leading-relaxed font-medium">
                     {service.description}
                   </p>
-
+                  <p className="text-xl  font-semibold mb-4  text-green-400">
+                    {service.p}
+                  </p>
                   {/* Features List - Enhanced */}
                   <div className="mb-8">
                     <h4 className="font-bold text-slate-900 mb-5 flex items-center text-lg">
@@ -414,7 +380,7 @@ const DigitalMarketing = () => {
                   </div>
 
                   {/* Results Preview */}
-                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-4 mb-6 border border-blue-200/30">
+                  <div className="bg-linear-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-4 mb-6 border border-blue-200/30">
                     <div className="text-sm font-semibold text-blue-800 mb-2">
                       Expected Outcomes:
                     </div>
@@ -434,7 +400,7 @@ const DigitalMarketing = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       to="/contact"
-                      className="group/btn inline-flex items-center justify-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
+                      className="group/btn inline-flex items-center justify-center bg-linear-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
                     >
                       <FaChartLine className="mr-3 group-hover/btn:scale-110 transition-transform duration-300" />
                       Get Custom Quote

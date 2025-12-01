@@ -10,6 +10,7 @@ import {
   FaMapMarkerAlt,
   FaGlobe,
 } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -28,12 +29,12 @@ const Footer = () => {
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
     { name: "Contact", link: "/contact" },
-    { name: "Careers", link: "/hiring" },
+    { name: "Careers", link: "/Careers" },
     { name: "Get Demo", link: "/GetDemo" },
   ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white pt-16 pb-10 relative overflow-hidden">
+    <footer className=" bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white  pt-16 pb-10 relative overflow-hidden">
       {/* Glow Animation */}
       <div className="absolute -top-32 -left-32 w-72 h-72 bg-[#A8FFE0] rounded-full opacity-10 animate-ping"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#A8FFE0] rounded-full opacity-10 animate-ping"></div>
@@ -77,6 +78,11 @@ const Footer = () => {
                   icon: <FaYoutube />,
                   link: "https://www.youtube.com/@worknestconnect",
                   bg: "bg-red-600",
+                },
+                {
+                  icon: <FaTiktok />,
+                  link: "https://www.tiktok.com/@worknestconnect?lang=en",
+                  bg: "bg-black",
                 },
               ].map((item, i) => (
                 <a
@@ -158,17 +164,18 @@ const Footer = () => {
                   </a>
                 </li>
 
-                <li className="flex justify-center lg:justify-start items-center">
-                  <FaMapMarkerAlt className="mr-2 text-green-400" />
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Al+Aziziya,+Doha+-+Qatar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-green-400 transition"
-                  >
-                    Al Aziziya, Doha - Qatar
-                  </a>
-                </li>
+<li className="flex justify-center lg:justify-start items-center">
+  <FaMapMarkerAlt className="mr-2 text-green-400 text-3xl" />
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=1st+floor,+Apartment+4+Building+No.+33,+Street+180,+Zone+55,+Al+Rayyan+-+Doha,+Qatar"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-green-400 transition"
+  >
+    1st floor, Apartment 4 Building No. 33, Street 180, Zone 55, Al Rayyan - Doha, Qatar
+  </a>
+</li>
+
 
                 <li className="flex justify-center lg:justify-start items-center">
                   <FaGlobe className="mr-2 text-green-400" />

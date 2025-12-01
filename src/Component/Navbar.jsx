@@ -1,11 +1,25 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, Search, Globe } from "lucide-react";
+
+
+
 
 export default function Navbar() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openService, setOpenService] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showLanguage, setShowLanguage] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("English");
+  const navigate = useNavigate();
+
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "hi", name: "हिंदी" },
+    { code: "ar", name: "العربية" },
+  ];
 
   // Handle scroll effect
   useEffect(() => {
@@ -19,7 +33,7 @@ export default function Navbar() {
   // Close services dropdown when window resizes
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1024) {
+      if (window.innerWidth < 1294) {
         setOpenService(false);
       }
     };
@@ -40,6 +54,69 @@ export default function Navbar() {
     };
   }, [openDrawer]);
 
+  // Close search and language when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showSearch && !event.target.closest(".search-container")) {
+        setShowSearch(false);
+      }
+      if (showLanguage && !event.target.closest(".language-container")) {
+        setShowLanguage(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSearch, showLanguage]);
+
+  // Search functionality
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+
+    const query = searchQuery.toLowerCase().trim();
+    const searchMappings = {
+      "digital marketing": "/services/Digital_Marketing",
+      marketing: "/services/Digital_Marketing",
+      "graphic design": "/services/Graphic_designing_services",
+      design: "/services/Graphic_designing_services",
+      "web development": "/services/Website_and_App_Development",
+      "app development": "/services/Website_and_App_Development",
+      website: "/services/Website_and_App_Development",
+      "it solutions": "/services/IT_&_AI_Solutions",
+      "ai solutions": "/services/IT_&_AI_Solutions",
+      "business consulting": "/services/Business_Consultings",
+      consulting: "/services/Business_Consultings",
+      about: "/about",
+      careers: "/Careers",
+      demo: "/GetDemo",
+      home: "/",
+    };
+
+    const matchedRoute = Object.keys(searchMappings).find(
+      (key) => query.includes(key) || key.includes(query)
+    );
+
+    if (matchedRoute) {
+      navigate(searchMappings[matchedRoute]);
+    } else {
+      navigate("/contact");
+    }
+
+    setSearchQuery("");
+    setShowSearch(false);
+  };
+
+  // Language selection functionality
+  const handleLanguageSelect = (language, code) => {
+    if (window.changeLanguageByButton) {
+      window.changeLanguageByButton(code);
+    }
+    setSelectedLanguage(language);
+    setShowLanguage(false);
+  };
+
   return (
     <>
       {/* NAVBAR */}
@@ -54,7 +131,7 @@ export default function Navbar() {
             <img
               src="/Main2.png"
               alt="logo"
-              className="h-30 lg:h-30 xl:h-40 w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
+              className="h-30 lg:h-28 xl:h-33  w-auto object-contain transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
             />
           </NavLink>
           <NavLink
@@ -68,8 +145,8 @@ export default function Navbar() {
             />
           </NavLink>
 
-          {/* CENTER NAV LINKS - Hidden on mobile, visible on lg+ */}
-          <ul className="hidden lg:flex items-center justify-center flex-1 max-w-2xl xl:gap-8 lg:gap-2 text-[16px] xl:text-[18px] font-semibold text-gray-900">
+          {/* CENTER NAV LINKS - Hidden below 1294px */}
+          <ul className="hidden xl:flex items-center justify-center flex-1 max-w-2xl xl:gap-3 lg:gap-1 text-[13px] xl:text-[17px] font-semibold text-gray-900">
             <li>
               <NavLink
                 style={({ isActive }) => ({
@@ -79,8 +156,8 @@ export default function Navbar() {
                 to="/"
               >
                 Home
-                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-gradient-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
-                <span className="absolute -inset-2 bg-gradient-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-linear-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
+                <span className="absolute -inset-2 bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               </NavLink>
             </li>
 
@@ -93,8 +170,8 @@ export default function Navbar() {
                 to="/about"
               >
                 About
-                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-gradient-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
-                <span className="absolute -inset-2 bg-gradient-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-linear-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
+                <span className="absolute -inset-2 bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               </NavLink>
             </li>
 
@@ -112,7 +189,7 @@ export default function Navbar() {
                     openService ? "rotate-180 text-[#027A55]" : "text-gray-600"
                   }`}
                 />
-                <span className="absolute -inset-2 bg-gradient-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                <span className="absolute -inset-2 bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               </div>
 
               {/* Enhanced Dropdown with better animation */}
@@ -147,7 +224,7 @@ export default function Navbar() {
                       path: "/services/Business_Consultings",
                       name: "Business Consulting",
                     },
-                  ].map((service, index) => (
+                  ].map((service) => (
                     <li key={service.path}>
                       <NavLink
                         style={({ isActive }) => ({
@@ -156,10 +233,10 @@ export default function Navbar() {
                             : "inherit",
                         })}
                         to={service.path}
-                        className="flex items-center px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-[#013026]/5 hover:to-[#027A55]/5 hover:text-[#012017da] transition-all duration-300 group/item"
+                        className="flex items-center px-4 py-3 rounded-xl hover:bg-linear-to-r hover:from-[#013026]/5 hover:to-[#027A55]/5 hover:text-[#012017da] transition-all duration-300 group/item"
                         onClick={() => setOpenService(false)}
                       >
-                        <span className="w-2 h-2 bg-gradient-to-r from-[#013026] to-[#027A55] rounded-full mr-3 group-hover/item:scale-125 transition-transform duration-300"></span>
+                        <span className="w-2 h-2 bg-linear-to-r from-[#013026] to-[#027A55] rounded-full mr-3 group-hover/item:scale-125 transition-transform duration-300"></span>
                         {service.name}
                         <ChevronDown
                           size={14}
@@ -181,24 +258,105 @@ export default function Navbar() {
                 to="/contact"
               >
                 Contact
-                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-gradient-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
-                <span className="absolute -inset-2 bg-gradient-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-linear-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
+                <span className="absolute -inset-2 bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={({ isActive }) => ({
+                  color: isActive ? "oklch(72.3% 0.219 149.579)" : "inherit",
+                })}
+                className="relative group px-3 py-3 transition-all duration-300 hover:text-[#012017da]"
+                to="/Project"
+              >
+                Project
+                <span className="absolute left-1/2 bottom-0 h-0.5 w-0 bg-linear-to-r from-[#013026] to-[#027A55] group-hover:w-full group-hover:left-0 transition-all duration-500"></span>
+                <span className="absolute -inset-2 bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
               </NavLink>
             </li>
           </ul>
 
-          {/* RIGHT BUTTONS - Hidden on mobile, visible on lg+ */}
-          <div className="hidden lg:flex items-center gap-4 ml-8">
+          {/* RIGHT BUTTONS - Hidden below 1294px */}
+          <div className="hidden xl:flex items-center gap-4 ml-8">
+            {/* Search Button */}
+            <div className="relative search-container">
+              <button
+                onClick={() => setShowSearch(!showSearch)}
+                className="p-2.5 bg-gray-100 hover:bg-linear-to-r hover:from-[#013026]/10 hover:to-[#027A55]/10 rounded-xl transition-all duration-300 group"
+              >
+                <Search
+                  size={18}
+                  className="text-gray-700 group-hover:text-[#012017da] transition-colors duration-300"
+                />
+              </button>
+
+              {/* Search Dropdown */}
+              {showSearch && (
+                <div className="absolute top-full right-0 mt-2 w-80 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-200 p-4 z-50">
+                  <form onSubmit={handleSearch} className="relative">
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search services, pages..."
+                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-300 rounded-xl focus:border-[#027A55] focus:outline-none transition-all duration-300 text-sm"
+                      autoFocus
+                    />
+                    <Search
+                      size={18}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
+                  </form>
+                </div>
+              )}
+            </div>
+
+            {/* Language Selection Button */}
+            <div
+              className="relative language-container"
+              onMouseEnter={() => setShowLanguage(true)}
+              onMouseLeave={() => setShowLanguage(false)}
+            >
+              <button className="p-2.5 bg-gray-100 hover:bg-linear-to-r hover:from-[#013026]/10 hover:to-[#027A55]/10 rounded-xl transition-all duration-300 group">
+                <Globe
+                  size={18}
+                  className="text-gray-700 group-hover:text-[#012017da] transition-colors duration-300"
+                />
+              </button>
+
+              {/* Language Dropdown */}
+              {showLanguage && (
+                <div className="absolute top-full right-0 mt-2 w-32 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-gray-200 py-2 z-50">
+                  <div className="absolute -top-2 right-4 w-4 h-4 bg-white rotate-45 border-t border-l border-gray-200"></div>
+                  {languages.map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => handleLanguageSelect(language.name, language.code)}
+                      className={`w-full text-left px-3 py-2 text-sm hover:bg-linear-to-r hover:from-[#013026]/5 hover:to-[#027A55]/5 hover:text-[#012017da] transition-all duration-300 ${
+                        selectedLanguage === language.name
+                          ? "bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 text-[#012017da]"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {language.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+
             <NavLink
               style={({ isActive }) => ({
                 color: isActive ? "oklch(72.3% 0.219 149.579)" : "white",
               })}
               to="/Careers"
-              className="relative px-6 py-2.5 bg-gradient-to-r from-[#013026] to-[#027A55] text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 font-semibold text-sm group overflow-hidden"
+              className="relative px-6 py-2.5 bg-linear-to-r from-[#013026] to-[#027A55] text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 font-semibold text-sm group overflow-hidden"
             >
               <span className="relative z-10">Careers</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#027A55] to-[#013026] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-              <span className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-r from-[#013026] to-[#027A55] bg-clip-padding group-hover:from-[#027A55] group-hover:to-[#013026] transition-all duration-500"></span>
+              <span className="absolute inset-0 bg-linear-to-r from-[#027A55] to-[#013026] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <span className="absolute inset-0 rounded-xl border-2 border-transparent bg-linear-to-r from-[#013026] to-[#027A55] bg-clip-padding group-hover:from-[#027A55] group-hover:to-[#013026] transition-all duration-500"></span>
             </NavLink>
 
             <NavLink
@@ -217,7 +375,7 @@ export default function Navbar() {
               </span>
 
               <span
-                className="absolute inset-0 bg-gradient-to-r from-[#013026] to-[#027A55] 
+                className="absolute inset-0 bg-linear-to-r from-[#013026] to-[#027A55] 
                  scale-0 group-hover:scale-100 
                  transition-transform duration-500 
                  origin-center rounded-lg"
@@ -225,28 +383,79 @@ export default function Navbar() {
             </NavLink>
           </div>
 
-          {/* MOBILE GET START & MENU BUTTON - Visible only on mobile */}
-          <div className="flex lg:hidden items-center gap-3">
+          {/* MOBILE SEARCH & BUTTONS - Visible below 1294px */}
+          <div className="flex xl:hidden items-center gap-2">
+            {/* Get Started Button - Hidden below 640px */}
             <NavLink
-              style={({ isActive }) => ({
-                color: isActive ? "oklch(72.3% 0.219 149.579)" : "white",
-              })}
-              to="/contact"
-              className="relative px-4 py-2 bg-gradient-to-r from-[#013026] to-[#027A55] text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-sm font-semibold group overflow-hidden"
+              to="/GetDemo"
+              className="hidden sm:block px-4 py-2 bg-gradient-to-r from-[#013026] to-[#027A55] text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-all duration-300"
             >
-              <span className="relative z-10">Get Start</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-[#027A55] to-[#013026] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              Get Started
             </NavLink>
+            {/* Mobile Search Bar - Full width below 1294px */}
+            <div className="flex-1 max-w-xs">
+              <form onSubmit={handleSearch}>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search..."
+                    className="w-full pl-8 pr-3 py-2 border-2 border-gray-300 rounded-lg focus:border-[#027A55] focus:outline-none transition-all duration-300 text-sm max-[450px]:hidden"
+                  />
+                  <Search
+                    size={16}
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400"
+                  />
+                </div>
+              </form>
+            </div>
+
+            {/* Mobile Language Selection */}
+            <div className="relative language-container">
+              <button
+                onClick={() => setShowLanguage(!showLanguage)}
+                className="p-2 bg-gray-100 hover:bg-linear-to-r hover:from-[#013026]/10 hover:to-[#027A55]/10 rounded-lg transition-all duration-300 group"
+              >
+                <Globe
+                  size={16}
+                  className="text-gray-700 group-hover:text-[#012017da] transition-colors duration-300"
+                />
+              </button>
+
+              {/* Mobile Language Dropdown */}
+              {showLanguage && (
+                <div className="absolute top-full right-0 mt-2 w-28 bg-white/98 backdrop-blur-xl shadow-2xl rounded-xl border border-gray-200 py-1 z-50">
+                  {[
+                    { code: "en", name: "English" },
+                    { code: "hi", name: "हिंदी" },
+                    { code: "ar", name: "العربية" },
+                  ].map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => handleLanguageSelect(language.name, language.code)}
+                      className={`w-full text-left px-2 py-1.5 text-xs hover:bg-linear-to-r hover:from-[#013026]/5 hover:to-[#027A55]/5 hover:text-[#012017da] transition-all duration-300 ${
+                        selectedLanguage === language.name
+                          ? "bg-linear-to-r from-[#013026]/5 to-[#027A55]/5 text-[#012017da]"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {language.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button
               onClick={() => setOpenDrawer(true)}
-              className="relative p-2.5 bg-gray-100 hover:bg-gradient-to-r hover:from-[#013026]/10 hover:to-[#027A55]/10 rounded-xl transition-all duration-300 group"
+              className="relative p-2.5 bg-gray-100 hover:bg-linear-to-r hover:from-[#013026]/10 hover:to-[#027A55]/10 rounded-xl transition-all duration-300 group"
             >
               <Menu
                 size={22}
                 className="text-gray-700 group-hover:text-[#012017da] transition-colors duration-300"
               />
-              <span className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-[#013026] to-[#027A55] bg-clip-padding rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="absolute inset-0 border-2 border-transparent bg-linear-to-r from-[#013026] to-[#027A55] bg-clip-padding rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </button>
           </div>
         </div>

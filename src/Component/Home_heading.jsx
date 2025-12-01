@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 
 // ⭐ IMPORT ALL JSON ANIMATIONS
 import codingAnim from "../assets/Coding.json";
-import digitalAnim from "../assets/digital.json";
+import digitalAnim from "../assets/Digital.json";
 import graAnim from "../assets/Gra.json";
 import itAnim from "../assets/IT.json";
 import bussAnim from "../assets/Buss.json";
@@ -27,31 +27,36 @@ function Home_heading() {
       name: "Digital Marketing",
       anim: "digital",
       type: "json",
-      desc: "Boost your brand’s visibility with data-driven digital marketing strategies designed to attract the right audience, increase engagement, and deliver measurable business growth.",
+      desc: "Elevate your brand’s digital impact with our advanced marketing solutions. We deliver strategic SEO, refined social media brand management, and performance-driven Google and Meta advertising designed to enhance visibility, strengthen market positioning, and generate high-value leads. Our data-focused approach ensures consistent growth, measurable ROI, and a powerful digital presence that supports long-term business success  Driving visibility, leads, and real business results. ",
+      learnMore: "/services/Digital_Marketing",
     },
     {
       name: "Graphic Designing",
       anim: "gra",
       type: "json",
-      desc: "Transform your ideas into powerful designs that enhance recognition, build trust, and connect your brand with the right audience.",
+      desc: "We help businesses create a strong, professional brand identity through high-quality, creative graphic design. From logos and print materials to digital assets, our designs align with your brand style, communicate effectively, and engage your target audience. Whether you need modern visuals, corporate documents, or online creatives, we deliver designs with clarity, purpose, and lasting impact.   Designs that communicate your brand with clarity, style, and impact.",
+      learnMore: "/services/Graphic_designing_services",
     },
     {
       name: "Web Development",
       anim: "coding",
       type: "json",
-      desc: "Build high-performance, responsive, scalable websites for amazing user experience.",
+      desc: "We help businesses build powerful, responsive websites and mobile applications that captivate users and drive results. From corporate websites and e-commerce platforms to web apps and mobile solutions, our development combines modern design, seamless functionality, and optimized performance. Whether it’s UI/UX design, SEO, or app deployment, we create digital experiences that engage and convert. Digital solutions that deliver seamless experiences and measurable results,",
+      learnMore: "/services/Website_and_App_Development",
     },
     {
       name: "AI & IT Solutions",
       anim: "it",
       type: "json",
-      desc: "Transform business operations with intelligent AI-powered solutions.",
+      desc: "We help businesses transform operations with intelligent AI and IT solutions. From automated billing, payroll, and POS systems to task management, chatbots, and scalable SaaS products, our technology streamlines processes, boosts productivity, and enhances customer experiences. We deliver innovative, reliable, and efficient solutions that empower businesses to operate smarter, faster, and more effectively. ,Smart technology solutions that streamline operations and drive growth. ",
+      learnMore: "/services/IT_&_AI_Solutions",
     },
     {
       name: "Business Consulting",
       anim: "buss",
       type: "json",
-      desc: "Expert guidance to help your business grow faster, make smarter decisions, and achieve long-term success.",
+      desc: "We help businesses launch, manage, and grow with expert consulting across all critical areas. From business setup, PRO services, and market entry guidance to HR policy, IT advisory, and strategic growth planning, we provide actionable insights and hands-on support. Our solutions ensure compliance, operational efficiency, and sustainable growth, empowering businesses to succeed confidently in any market.  Expert guidance to launch, manage, and grow your business with confidence. ",
+      learnMore: "/services/Business_Consultings",
     },
   ];
 
@@ -62,9 +67,8 @@ function Home_heading() {
       {/* TOP SECTION */}
       <div
         className="
-          w-full 
-          bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F]
-          text-white 
+          w-full mt-[50px]
+           bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white   
           flex flex-col items-center
           text-center 
           relative
@@ -74,6 +78,7 @@ function Home_heading() {
           rounded-[28px] sm:rounded-[28px] lg:rounded-[42px]
         "
       >
+               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* MAIN HEADING */}
         <h1
           className="
@@ -85,7 +90,7 @@ function Home_heading() {
             mt-16
           "
         >
-          <span className="bg-gradient-to-r from-[#1FD198] via-white to-[#CFFFE9] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#1FD198] via-white to-[#CFFFE9] bg-clip-text text-transparent">
             All-In-One Creative, Tech & Business Services
           </span>
           <br />
@@ -93,7 +98,7 @@ function Home_heading() {
         </h1>
 
         {/* PARAGRAPH */}
-        <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-xl mt-4 opacity-90">
+        <p className="max-w-3xl text-sm sm:text-base md:text-lg lg:text-2xl mt-4 opacity-90">
           Stay ahead with solutions designed for tomorrow — intelligent tools
           and strategies.
         </p>
@@ -104,7 +109,7 @@ function Home_heading() {
           className="
             mt-6
             px-7 py-3.5 
-            bg-gradient-to-r from-[#037c5598] to-[#CFFFE9]
+            bg-linear-to-r from-[#037c5598] to-[#CFFFE9]
             text-black font-semibold
             rounded-full
             shadow-xl shadow-black/40
@@ -164,7 +169,7 @@ function Home_heading() {
               ${
                 active === i
                   ? "bg-black text-white border-2 border-white scale-105"
-                  : "bg-transparent text-black border-[1px] border-black hover:bg-black hover:text-white"
+                  : "bg-transparent text-black border-1px border-black hover:bg-black hover:text-white"
               }
             `}
           >
@@ -174,10 +179,10 @@ function Home_heading() {
       </div>
 
       {/* DESCRIPTION */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 mt-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 mt-0">
         <div
           className="
-            max-w-[900px] 
+            max-w-[1500px] 
             mx-auto 
             text-center 
             text-base sm:text-lg md:text-xl
@@ -190,6 +195,12 @@ function Home_heading() {
           "
         >
           <p className="opacity-90 mb-4">{items[active].desc}</p>
+          <button
+            onClick={() => navigate(items[active].learnMore)}
+            className="px-6 py-2.5 bg-gradient-to-r from-[#013026] to-[#027A55] text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm sm:text-base"
+          >
+            Learn More
+          </button>
         </div>
       </div>
     </>

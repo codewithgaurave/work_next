@@ -183,3 +183,9 @@ html {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}

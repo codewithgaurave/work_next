@@ -105,7 +105,7 @@ const TestimonialCarousel = () => {
               className="
                 min-w-[23%] bg-white p-6 rounded-2xl border 
                 border-gray-300 shadow-md hover:shadow-xl 
-                transition-all duration-300 flex-shrink-0
+                transition-all duration-300 shrink-0
                 hover:scale-[1.03]
               "
             >

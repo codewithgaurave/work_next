@@ -14,6 +14,7 @@ import GraphicDesign from "./Graphic_designing";
 import WebsiteAndAppDevelopment from "./Website_and_App_Development_Service";
 import ITAndAISolutions from "./IT_&_AI_Solutions";
 import BusinessConsulting from "./Business_Consultings";
+import Project from "./Project";
 
 function Router() {
   return (
@@ -48,6 +49,9 @@ function Router() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<CareersPage />} />
         <Route path="/getdemo" element={<DemoPage />} />
+        <Route path="/Project" element={<Project />} />
+
+        {/* ⭐ Correct Dashboard Routing */}
       </Routes>
     </>
   );

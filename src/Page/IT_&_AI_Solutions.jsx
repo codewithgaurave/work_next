@@ -1,5 +1,5 @@
 // components/ITAndAISolutions.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   FaCode,
   FaRobot,
@@ -29,7 +29,6 @@ import { Link } from "react-router-dom";
 
 const ITAndAISolutions = () => {
   const serviceCardsRef = useRef([]);
-  const [activeService, setActiveService] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -63,17 +62,18 @@ const ITAndAISolutions = () => {
       icon: <FaCog className="text-3xl" />,
       title: "Billing & Invoice Software",
       description:
-        "Streamline your financial operations with our comprehensive billing and invoicing solutions. Automate invoice generation, payment tracking, and financial reporting to save time and reduce errors in your accounting processes.",
+        "Manage your finances with ease using our smart billing and invoicing system. Automate invoices, track payments, and generate accurate financial reports—helping your business save time, reduce errors, and stay fully organized.",
+      p: "Your financial workflow—faster, cleaner, smarter.",
+      h: "What You’ll Get:",
       features: [
-        "Automated Invoice Generation",
-        "Payment Tracking",
-        "Tax Calculation",
-        "Multi-Currency Support",
-        "Recurring Billing",
-        "Financial Reporting",
+        "✓ Automated Invoice Generation",
+        "✓ Real-Time Payment Tracking",
+        "✓ Financial Reports & Statements",
+        "✓ Multi-User Access",
+        "✓ Secure Data Storage",
+        "✓ Mobile & Desktop Access",
       ],
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Billing and Invoice illustration copy.png",
       gradient: "from-indigo-500 to-purple-500",
       results: ["✓ 80% Time Saved", "✓ 99% Accuracy", "✓ Real-time Tracking"],
     },
@@ -82,17 +82,18 @@ const ITAndAISolutions = () => {
       icon: <FaServer className="text-3xl" />,
       title: "Task Management Systems",
       description:
-        "Boost team productivity with our intelligent task management solutions. Organize projects, assign tasks, track progress, and collaborate seamlessly with features designed to enhance team efficiency and project success.",
+        "Increase your team’s productivity with our smart task management platform. Easily organize projects, assign responsibilities, track real-time progress, and collaborate smoothly—ensuring your teams work faster, clearer, and more efficiently.",
+      p: "Your workflow—organized, efficient, unstoppable.",
+      h: "What You’ll Get:",
       features: [
-        "Project Planning",
-        "Task Assignment",
-        "Progress Tracking",
-        "Team Collaboration",
-        "Time Management",
-        "Performance Analytics",
+        "✓ Project & Task Organization",
+        "✓ Team Collaboration Tools",
+        "✓ Real-Time Progress Tracking",
+        "✓ Deadline & Reminder Alerts",
+        "✓ File Sharing & Notes",
+        "✓ Mobile & Desktop Access",
       ],
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Task Management Softwares illustration.png",
       gradient: "from-blue-500 to-cyan-500",
       results: [
         "✓ 60% Productivity Boost",
@@ -105,16 +106,18 @@ const ITAndAISolutions = () => {
       icon: <FaDatabase className="text-3xl" />,
       title: "Payroll Management",
       description:
-        "Simplify payroll processing with our automated payroll management systems. Handle employee salaries, tax deductions, benefits administration, and compliance reporting with precision and ease.",
+        "Make payroll stress-free with our automated payroll system. Process salaries, handle deductions, manage benefits, and ensure full compliance—quickly, accurately, and without manual errors. Perfect for smooth and reliable employee management.",
+      p: "Seamless payroll—every month, every time.",
+      h: "What You’ll Get:",
       features: [
-        "Automated Salary Processing",
-        "Tax Deduction Management",
-        "Benefits Administration",
-        "Compliance Reporting",
+        "✓ Automated Salary Processing",
+        "✓ Tax & Deduction Management",
+        "✓ Benefits & Allowance Setup",
+        "✓ Attendance & Leave Integration",
         "Employee Self-Service",
-        "Integration with Accounting",
+        "Employee Self-Service",
       ],
-      image: "https://dcsgr.com/wp-content/uploads/2021/05/payroll-1.jpg",
+      image: "/Payroll Management Illustration.png",
       gradient: "from-green-500 to-emerald-500",
       results: [
         "✓ Error-free Processing",
@@ -127,17 +130,18 @@ const ITAndAISolutions = () => {
       icon: <FaMobile className="text-3xl" />,
       title: "POS Systems",
       description:
-        "Revolutionize your retail operations with our advanced Point of Sale solutions. Process transactions, manage inventory, track sales, and gain valuable business insights with our comprehensive POS software.",
+        "Upgrade your retail operations with our modern POS system built for speed, accuracy, and smooth customer service. Manage sales, track inventory, process payments, and access real-time insights—all in one powerful, easy-to-use platform.",
+      P: "Efficiency at the counter, clarity in the backend.",
+      h: "What You’ll Get:",
       features: [
-        "Transaction Processing",
-        "Inventory Management",
-        "Sales Analytics",
-        "Customer Management",
-        "Multi-store Support",
-        "Integration Capabilities",
+        "✓ Fast & Secure Billing",
+        "✓ Inventory Management",
+        "✓ Real-Time Sales Tracking",
+        "✓ Multi-Store Support",
+        "✓ Payment Gateway Integration",
+        "✓ Reporting & Analytics Dashboard",
       ],
-      image:
-        "https://www.accupos.com/wp-content/uploads/2019/09/high-quality-pos.jpg",
+      image: "/POS System illustration.png",
       gradient: "from-orange-500 to-red-500",
       results: [
         "✓ Faster Checkout",
@@ -150,17 +154,19 @@ const ITAndAISolutions = () => {
       icon: <FaRobot className="text-3xl" />,
       title: "AI Solutions & Chatbots",
       description:
-        "Transform customer experience and business operations with our cutting-edge AI solutions. Implement intelligent chatbots, automate processes, and leverage machine learning to drive innovation and efficiency.",
+        "Enhance customer experience and streamline operations with intelligent AI tools. From smart chatbots to automated workflows, we help your business respond faster, work smarter, and deliver a more modern, efficient service experience.",
+      p: "AI that listens, learns, and delivers.",
+      h: "What You’ll Get:",
+
       features: [
-        "Intelligent Chatbots",
-        "Process Automation",
-        "Machine Learning",
-        "Predictive Analytics",
-        "Natural Language Processing",
-        "Custom AI Models",
+        "✓ AI-Powered Chatbots",
+        "Automated Customer Support",
+        "✓ Workflow & Process Automation",
+        "✓ Machine Learning Integrations",
+        "✓ Multilingual Support",
+        "✓ Analytics & Performance Insights",
       ],
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/AI and Chatbots Illustration.png",
       gradient: "from-purple-500 to-pink-500",
       results: [
         "✓ 24/7 Customer Support",
@@ -173,17 +179,18 @@ const ITAndAISolutions = () => {
       icon: <FaCloud className="text-3xl" />,
       title: "SaaS Products Development",
       description:
-        "Build scalable and robust Software-as-a-Service products with our expert development team. From concept to deployment, we create cloud-native solutions that grow with your business and meet market demands.",
+        "BTransform your ideas into scalable, robust Software-as-a-Service solutions. Our expert development team delivers end-to-end cloud-native products — from concept and design to deployment and growth — tailored to evolve with your business and exceed market expectations.",
+      p: "From concept to cloud, we bring ideas to life.",
+      h: "What You’ll Get:",
       features: [
-        "Cloud Architecture",
-        "Scalable Infrastructure",
-        "Multi-tenant Design",
-        "API Development",
-        "Security Implementation",
-        "Continuous Deployment",
+        "✓ Scalable Cloud-Native Architecture",
+        "✓ End-to-End Product Development",
+        "✓ Custom Feature Integration",
+        "✓ Custom Feature Integration",
+        "✓ Continuous Support & Updates",
+        "✓ Market-Ready SaaS Solutions",
       ],
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Saas Products Illustration.png",
       gradient: "from-teal-500 to-blue-500",
       results: [
         "✓ Scalable Solutions",
@@ -193,40 +200,11 @@ const ITAndAISolutions = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "David Chen",
-      company: "Retail Chain Inc.",
-      comment:
-        "The POS system transformed our retail operations. Sales tracking and inventory management have never been easier!",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Sophia Martinez",
-      company: "Tech Startup",
-      comment:
-        "Their AI chatbot reduced our customer support costs by 70% while improving customer satisfaction significantly.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Robert Kim",
-      company: "Manufacturing Corp",
-      comment:
-        "The task management system improved our project completion rate by 45%. Team collaboration is now seamless.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50/30 mt-[80px]">
       {/* Header Section */}
-      <header className="relative bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white overflow-hidden">
+      <header className="relative  bg-gradient-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/20 to-transparent"></div>
@@ -253,13 +231,13 @@ const ITAndAISolutions = () => {
             <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               IT & AI Solutions
             </span>
-            <span className="blocktext-4xl md:text-5xl lg:text-6xl font-semibold text-transparent bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mt-4">
+            <span className="block text-4xl md:text-5xl lg:text-6xl font-semibold text-transparent bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mt-4">
               That Transform Businesses
             </span>
           </h1>
 
           {/* Sub Text */}
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-light text-yellow-200 leading-relaxed drop-shadow-sm">
+          <p className="text-2xl py-5 md:text-2xl mb-8 max-w-3xl mx-auto font-light text-white leading-relaxed drop-shadow-sm">
             Harness the power of technology and artificial intelligence to
             automate processes, gain insights, and drive unprecedented business
             growth.
@@ -362,40 +340,56 @@ const ITAndAISolutions = () => {
                     />
 
                     {/* Hover Gradient */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-                    ></div>
 
                     {/* Floating Icon */}
-                    <div className="absolute top-6 left-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div
-                        className={`bg-gradient-to-r ${service.gradient} text-white p-5 rounded-2xl shadow-xl`}
-                      >
-                        {service.icon}
-                      </div>
-                    </div>
-
-                    {/* Badge */}
-                    <div className="absolute bottom-6 right-6 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-2xl border border-white/20">
-                      <div className="text-sm font-semibold text-green-300">
-                        Key Benefit
-                      </div>
-                      <div className="text-xs opacity-90">
-                        {service.results[0]}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
                 {/* Right: Content */}
                 <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                    {service.title}
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <h3 className="text-3xl font-bold text-slate-900">
+                      {service.title}
+                    </h3>
+                  </div>
 
                   <p className="text-slate-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
+                  <p className="text-xl font-semibold py-2">{service.p}</p>
+                  <p className="text-xl font-semibold py-2">{service.h}</p>
+
+                  {/* Features List */}
+                  <div className="mb-6">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center text-slate-600"
+                        >
+                          <FaRegCheckCircle className="text-green-500 mr-2 flex-shrink-0" />
+                          <span className="text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Results */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-slate-800 mb-3">
+                      Expected Results:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {service.results.map((result, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+                        >
+                          {result}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
                   {/* Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4">

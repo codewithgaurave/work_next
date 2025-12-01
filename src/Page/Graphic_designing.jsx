@@ -1,5 +1,5 @@
 // components/GraphicDesign.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   FaPalette,
   FaBrush,
@@ -25,7 +25,6 @@ import { Link } from "react-router-dom";
 
 const GraphicDesign = () => {
   const serviceCardsRef = useRef([]);
-  const [activeService, setActiveService] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -60,6 +59,7 @@ const GraphicDesign = () => {
       title: "Logo Design",
       description:
         "Create unforgettable brand identities with our professional logo designs. We craft unique, memorable logos that capture your brand's essence and make a lasting impression on your audience across all platforms.",
+      p: "Your brand, designed to be remembered.",
       features: [
         "Modern Logo Design",
         "Vintage & Retro Logos",
@@ -68,7 +68,7 @@ const GraphicDesign = () => {
         "Mascot Logos",
         "Typography Logos",
       ],
-      image: "/1.webp",
+      image: "/logo.png",
       gradient: "from-purple-500 to-pink-500",
       results: [
         "✓ Multiple Concepts",
@@ -81,7 +81,8 @@ const GraphicDesign = () => {
       icon: <FaBrush className="text-3xl" />,
       title: "Business Stationery",
       description:
-        "Complete business identity packages that make your brand look professional and established. From business cards to letterheads, we design everything you need for a cohesive brand presence.",
+        "Create a professional and cohesive brand presence with complete business identity packages. From business cards and letterheads to envelopes and presentation folders, we design everything your brand needs to look established and consistent across all touchpoints.",
+      p: "Establish your brand with confidence.",
       features: [
         "Business Cards",
         "Letter Heads",
@@ -90,8 +91,7 @@ const GraphicDesign = () => {
         "Invoice Templates",
         "Presentation Folders",
       ],
-      image:
-        "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Business Stationary illustration.png",
       gradient: "from-blue-500 to-cyan-500",
       results: [
         "✓ Print-Ready Files",
@@ -104,7 +104,8 @@ const GraphicDesign = () => {
       icon: <FaLayerGroup className="text-3xl" />,
       title: "Marketing Materials",
       description:
-        "Eye-catching marketing collateral that converts viewers into customers. We design brochures, flyers, and posters that communicate your message effectively and drive results.",
+        "Create eye-catching marketing collateral that turns viewers into customers. From brochures and flyers to posters and catalogs, we design materials that communicate your message clearly, engage your audience, and drive measurable results.",
+      p: "Marketing materials that make your brand stand out.",
       features: [
         "Brochures & Flyers",
         "Posters & Banners",
@@ -113,8 +114,7 @@ const GraphicDesign = () => {
         "Event Materials",
         "Menu Designs",
       ],
-      image:
-        "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Marketing material illustration.png",
       gradient: "from-green-500 to-emerald-500",
       results: ["✓ High-Resolution", "✓ Print & Digital", "✓ Multiple Layouts"],
     },
@@ -123,7 +123,8 @@ const GraphicDesign = () => {
       icon: <FaMobile className="text-3xl" />,
       title: "Digital Graphics",
       description:
-        "Stunning digital graphics that stop the scroll and capture attention. From social media posts to email signatures, we create visuals that engage your audience across all digital platforms.",
+        "Create stunning digital visuals that capture attention and engage your audience. From social media posts and web banners to email signatures and cover images, we design graphics optimized for every platform and device, keeping your brand consistent and memorable.",
+      p: "Your brand, beautifully visualized online.",
       features: [
         "Social Media Graphics",
         "Email Signatures",
@@ -132,8 +133,7 @@ const GraphicDesign = () => {
         "Digital Ad Designs",
         "Web Banners",
       ],
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Digital Graphics illustration.png",
       gradient: "from-orange-500 to-red-500",
       results: [
         "✓ Platform Optimized",
@@ -146,7 +146,9 @@ const GraphicDesign = () => {
       icon: <FaPrint className="text-3xl" />,
       title: "Print & Ad Design",
       description:
-        "Professional print and advertisement designs that get noticed. Whether it's magazine ads, billboards, or newspaper spreads, we create designs that stand out and deliver your message effectively.",
+        "Get noticed with professional print and advertisement designs. From magazine and newspaper ads to billboards, vehicle wraps, and trade show graphics, we create visuals that stand out and communicate your message effectively.",
+      p: "From page to billboard, designs that deliver.",
+
       features: [
         "Magazine Ads",
         "Newspaper Ads",
@@ -155,8 +157,7 @@ const GraphicDesign = () => {
         "Trade Show Graphics",
         "Point of Sale Materials",
       ],
-      image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80",
+      image: "/Print and Ad Design illustration.png",
       gradient: "from-indigo-500 to-purple-500",
       results: ["✓ CMYK Ready", "✓ Bleed Included", "✓ High Quality"],
     },
@@ -165,7 +166,8 @@ const GraphicDesign = () => {
       icon: <FaEnvelope className="text-3xl" />,
       title: "Corporate Identity",
       description:
-        "Complete corporate identity packages that establish your brand as an industry leader. We design everything from employee IDs to corporate invitations with consistent brand messaging.",
+        "Build a strong, professional corporate image with complete identity packages. From employee IDs and corporate invitations to proposals, reports, and pitch decks, we ensure every touchpoint reflects your brand consistently and professionally.",
+      p: "Every detail reflecting your brand’s excellence.",
       features: [
         "Employee ID Cards",
         "Corporate Invitations",
@@ -174,51 +176,21 @@ const GraphicDesign = () => {
         "PowerPoint Templates",
         "Pitch Decks",
       ],
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      image: "/Corporate Identity illustration.png",
       gradient: "from-yellow-500 to-amber-500",
       results: ["✓ Full Brand Kit", "✓ Style Guide", "✓ All File Types"],
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Alex Thompson",
-      company: "StartUp Ventures",
-      comment:
-        "The logo design exceeded our expectations! They captured our brand essence perfectly and delivered multiple amazing concepts.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Maria Garcia",
-      company: "Boutique Fashion",
-      comment:
-        "Our marketing materials have never looked better. The designs increased our customer engagement by 300%!",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "James Wilson",
-      company: "Tech Solutions Inc.",
-      comment:
-        "Professional corporate identity that impressed our investors. The attention to detail in every design element was remarkable.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-orange-50/30 mt-[80px]">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-orange-50/30 mt-[80px]">
       {/* Header Section */}
-      <header className="relative bg-gradient-to-b from-[#01291F] via-[#0F4F3C] to-[#01291F] text-white overflow-hidden">
+      <header className="relative  bg-linear-to-b from-[#076950] via-[#0d5640] to-[#024a38] text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/20 to-transparent"></div>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-yellow-300 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
@@ -237,15 +209,15 @@ const GraphicDesign = () => {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-tight drop-shadow-lg">
-            <span className="bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent">
               Graphic Design
             </span>
-            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-gradient-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent bg-clip-text mt-4">
+            <span className="block text-4xl md:text-5xl lg:text-6xl text-transparent bg-linear-to-r from-green-300 via-white to-green-400 bg-clip-text text-transparent bg-clip-text mt-4">
               That Captivates
             </span>
           </h1>
 
-          <p className="text-xl md:text-xl mb-8 max-w-3xl mx-auto font-light text-yellow-100 leading-relaxed drop-shadow-sm">
+          <p className="text-xl py-4 md:text-xl mb-8 max-w-3xl mx-auto font-light text-white leading-relaxed drop-shadow-sm">
             Transform your brand with stunning visual designs that tell your
             story, connect with your audience, and drive real business results.
           </p>
@@ -307,7 +279,7 @@ const GraphicDesign = () => {
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 mb-6">
               Our{" "}
-              <span className="bg-gradient-to-r from-green-900 to-green-300 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-green-900 to-green-300 bg-clip-text text-transparent">
                 Design
               </span>{" "}
               Excellence
@@ -336,45 +308,27 @@ const GraphicDesign = () => {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
-                    {/* Gradient Overlay */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
-                    ></div>
-
-                    {/* Floating Icon */}
-                    <div className="absolute top-6 left-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <div
-                        className={`bg-gradient-to-r ${service.gradient} text-white p-5 rounded-2xl shadow-2xl backdrop-blur-sm border border-white/20`}
-                      >
-                        {service.icon}
-                      </div>
-                    </div>
 
                     {/* Results Badge */}
-                    <div className="absolute bottom-6 right-6 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-2xl border border-white/20">
-                      <div className="text-sm font-semibold text-orange-300">
-                        What's Included
-                      </div>
-                      <div className="text-xs opacity-90">
-                        {service.results[0]}
-                      </div>
-                    </div>
                   </div>
                 </div>
 
                 {/* Content Section - Enhanced */}
-                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-white to-orange-50/30">
+                <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center bg-linear-to-br from-white to-orange-50/30">
                   {/* Service Header */}
                   <div className="mb-6">
                     <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-3 leading-tight">
                       {service.title}
                     </h3>
-                    <div className="w-16 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full"></div>
+                    <div className="w-16 h-1 bg-linear-to-r from-orange-500 to-yellow-500 rounded-full"></div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-700 text-lg mb-8 leading-relaxed font-medium">
+                  <p className="text-slate-700 text-lg  leading-relaxed font-medium">
                     {service.description}
+                  </p>
+                  <p className="text-xl font-semibold py-4 text-green-400">
+                    {service.p}{" "}
                   </p>
 
                   {/* Features List - Enhanced */}
@@ -401,7 +355,7 @@ const GraphicDesign = () => {
                   </div>
 
                   {/* Results Preview */}
-                  <div className="bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-2xl p-4 mb-6 border border-orange-200/30">
+                  <div className="bg-linear-to-r from-orange-500/10 to-yellow-500/10 rounded-2xl p-4 mb-6 border border-orange-200/30">
                     <div className="text-sm font-semibold text-orange-800 mb-2">
                       Package Includes:
                     </div>
@@ -421,7 +375,7 @@ const GraphicDesign = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       to="/contact"
-                      className="group/btn inline-flex items-center justify-center bg-gradient-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
+                      className="group/btn inline-flex items-center justify-center bg-linear-to-r from-green-900 to-green-600 hover:from-green-600 hover:to-green-900 text-white font-semibold px-6 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl border border-blue-500/20"
                     >
                       <FaChartLine className="mr-3 group-hover/btn:scale-110 transition-transform duration-300" />
                       Get Custom Quote

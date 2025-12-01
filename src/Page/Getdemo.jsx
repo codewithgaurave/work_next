@@ -21,8 +21,10 @@ import {
 } from "react-icons/fa";
 
 import Footer from "../Component/Footer";
+import axios from "axios";
 
 const DemoPage = () => {
+  const api_url = import.meta.env.VITE_API_URL;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -47,6 +49,7 @@ const DemoPage = () => {
     // Handle form submission here
     console.log("Form submitted:", formData);
     alert(`Thank you ${formData.name}! Your demo request has been submitted.`);
+    axios.post(`${api_url}/api/demo`, formData);
     setIsModalOpen(false);
     // Reset form
     setFormData({
@@ -126,57 +129,24 @@ const DemoPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white to-emerald-50">
+    <div
+      className="min-h-screen bg-linear-to-b from-[#088667] via-[#177458] to-emerald-50
+          text-white to-emerald-50"
+    >
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-emerald-100 ">
-        <div className="container mx-auto px-4 pb-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 p-2 rounded-xl">
-                <FaRocket className="text-2xl text-white" />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent">
-                WorknestConnect
-              </h1>
-            </div>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-emerald-200"
-            >
-              <FaCalendarCheck />
-              <span>Get Demo</span>
-            </button>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden bg-[#01291F] text-white">
+      <section
+        className="relative py-25 mt-20 overflow-hidden bg-linear-to-b from-[#088667] via-[#177458] to-[#024a38]
+      
+          text-white"
+      >
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&auto=format&fit=crop')] opacity-10 bg-cover bg-center"></div>
         {/* Background gradient + bubbles */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-green-400/10 to-emerald-600/10"></div>
+          <div className="absolute inset-0 bg-linear-to-br from-green-400/10 to-emerald-600/10"></div>
 
           {/* Floating animated bubbles */}
-          {[...Array(10)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ y: 0, x: 0, opacity: 0.3 }}
-              animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 6 + i,
-                delay: i * 0.5,
-                ease: "easeInOut",
-              }}
-              className="absolute bg-emerald-200 rounded-full opacity-20"
-              style={{
-                width: 4 + Math.random() * 12,
-                height: 4 + Math.random() * 12,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -201,7 +171,7 @@ const DemoPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:shadow-emerald-200"
+                  className="bg-linear-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:shadow-emerald-200"
                 >
                   <FaCalendarCheck className="text-xl" />
                   <span>Request Free Demo</span>
@@ -235,7 +205,7 @@ const DemoPage = () => {
             {/* RIGHT CARD */}
             <div className="lg:w-1/2 relative">
               <motion.div
-                className="bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-3xl p-8 text-white shadow-2xl relative "
+                className="bg-linear-to-br from-emerald-500 to-emerald-700 rounded-3xl p-8 text-white shadow-2xl relative "
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               >
@@ -365,7 +335,10 @@ const DemoPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative bg-[#01291F] text-white">
+      <section
+        className="py-16 relative bg-linear-to-b from-[#088667] via-[#177458] to-[#024a38]
+          text-white"
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
@@ -512,7 +485,7 @@ const DemoPage = () => {
                 {/* SCHEDULE CONSULTATION BUTTON */}
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-3 rounded-2xl font-semibold hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2 shadow-lg"
+                  className="w-full bg-linear-to-r from-emerald-600 to-emerald-700 text-white py-3 rounded-2xl font-semibold hover:scale-105 transition-transform duration-300 flex items-center justify-center space-x-2 shadow-lg"
                 >
                   <FaCalendarCheck />
                   <span>Schedule Consultation</span>
@@ -530,7 +503,7 @@ const DemoPage = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] mt-sm[200px] mt-[100px] overflow-y-auto animate-fade-in">
-            <div className="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white p-6 rounded-t-2xl flex justify-between items-center">
+            <div className="bg-linear-to-r from-emerald-500 to-emerald-700 text-white p-6 rounded-t-2xl flex justify-between items-center">
               <h2 className="text-2xl font-bold">Request a Demo</h2>
               <button
                 onClick={() => setIsModalOpen(false)}
@@ -600,7 +573,7 @@ const DemoPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="w-full bg-linear-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-xl font-semibold text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Submit Request
                 </button>
