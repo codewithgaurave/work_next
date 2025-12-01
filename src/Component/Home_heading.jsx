@@ -205,6 +205,6 @@ function Home_heading() {
       </div>
     </>
   );
-}
+} 
 
 export default Home_heading;
