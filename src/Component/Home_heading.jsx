@@ -4,9 +4,9 @@ import Lottie from "lottie-react";
 
 // ⭐ IMPORT ALL JSON ANIMATIONS
 import codingAnim from "../assets/Coding.json";
-import digitalAnim from "../assets/Digital.json";
+import digitalAnim from "../assets/digital.json";
 import graAnim from "../assets/gra.json";
-import itAnim from "../assets/IT.json";
+import itAnim from "../assets/it.json";
 import bussAnim from "../assets/Buss.json";
 
 function Home_heading() {
